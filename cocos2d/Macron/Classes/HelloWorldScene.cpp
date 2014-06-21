@@ -261,7 +261,7 @@ void HelloWorld::addFood(){
     MoveTo::create(duration, Point(-food->getContentSize().width/2,food->getPositionY()));
     
     //finish action
-    CallFunc* actionMoveDone =
+    CallFuncN* actionMoveDone =
     CallFuncN::create([this](Node * sender){
         this->spriteMoveFinished(sender);
     });
@@ -330,12 +330,36 @@ void HelloWorld::addFood(){
             action1 = BezierTo::create(duration, bezier);
             food->runAction(Sequence::create(action1,actionMoveDone, NULL));
             break;
+        case 9:
+            //horizontal move stop
+            food->stopAllActions();
+            //ease int out add
+            action1 = EaseInOut::create(actionMove, 3.0f);
+            food->runAction(Sequence::create(action1,actionMoveDone,NULL));
+            break;
+        case 10:
+            //horizontal move stop
+            food->stopAllActions();
+            //ease bounce move add
+            action1 = EaseBounceOut::create(actionMove);
+            food->runAction(Sequence::create(action1,actionMove, NULL));
+            break;
+        case 11:
+            //horizontal move stop
+            food->stopAllActions();
+            //bounce horizontal last
+            action1 = EaseBounceOut::create(actionMove);
+            food->runAction(action1);
+            //jump action add
+            action2 = JumpBy::create(duration, Vec2(0, 0), 100, 5);
+            food->runAction(action2);
+            break;
         default:
             //horizontal move
             break;
     }
     //icrement type
-    this->m_actionType = (m_actionType+1)%9;
+    this->m_actionType = (m_actionType+1)%12;
 }
 
 void HelloWorld::spriteMoveFinished(cocos2d::Node *sender){
