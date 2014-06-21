@@ -80,6 +80,10 @@
 		D628FC091955597A00D610E5 /* surf_board4.png in Resources */ = {isa = PBXBuildFile; fileRef = D628FBFF1955597A00D610E5 /* surf_board4.png */; };
 		D628FC0D195559A000D610E5 /* body_set.png in Resources */ = {isa = PBXBuildFile; fileRef = D628FC0C195559A000D610E5 /* body_set.png */; };
 		D628FC0E195559A000D610E5 /* body_set.png in Resources */ = {isa = PBXBuildFile; fileRef = D628FC0C195559A000D610E5 /* body_set.png */; };
+		D628FC131955A5F500D610E5 /* float_ring2.png in Resources */ = {isa = PBXBuildFile; fileRef = D628FC121955A5F500D610E5 /* float_ring2.png */; };
+		D628FC141955A5F500D610E5 /* float_ring2.png in Resources */ = {isa = PBXBuildFile; fileRef = D628FC121955A5F500D610E5 /* float_ring2.png */; };
+		D628FC181955AD0C00D610E5 /* c-ball-ex2.png in Resources */ = {isa = PBXBuildFile; fileRef = D628FC171955AD0C00D610E5 /* c-ball-ex2.png */; };
+		D628FC191955AD0C00D610E5 /* c-ball-ex2.png in Resources */ = {isa = PBXBuildFile; fileRef = D628FC171955AD0C00D610E5 /* c-ball-ex2.png */; };
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
@@ -284,6 +288,8 @@
 		D628FBFE1955597A00D610E5 /* surf_board2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = surf_board2.png; sourceTree = "<group>"; };
 		D628FBFF1955597A00D610E5 /* surf_board4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = surf_board4.png; sourceTree = "<group>"; };
 		D628FC0C195559A000D610E5 /* body_set.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = body_set.png; sourceTree = "<group>"; };
+		D628FC121955A5F500D610E5 /* float_ring2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = float_ring2.png; sourceTree = "<group>"; };
+		D628FC171955AD0C00D610E5 /* c-ball-ex2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "c-ball-ex2.png"; sourceTree = "<group>"; };
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
@@ -473,6 +479,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D628FC171955AD0C00D610E5 /* c-ball-ex2.png */,
+				D628FC121955A5F500D610E5 /* float_ring2.png */,
 				D628FC0C195559A000D610E5 /* body_set.png */,
 				D628FBFB1955597A00D610E5 /* float_ring.png */,
 				D628FBFC1955597A00D610E5 /* Light_mini_Off.png */,
@@ -656,6 +664,7 @@
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
+				D628FC131955A5F500D610E5 /* float_ring2.png in Resources */,
 				D628FC081955597A00D610E5 /* surf_board4.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
 				D628FC0D195559A000D610E5 /* body_set.png in Resources */,
@@ -668,6 +677,7 @@
 				D628FC001955597A00D610E5 /* float_ring.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
+				D628FC181955AD0C00D610E5 /* c-ball-ex2.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
@@ -683,7 +693,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D628FC191955AD0C00D610E5 /* c-ball-ex2.png in Resources */,
 				D628FC011955597A00D610E5 /* float_ring.png in Resources */,
+				D628FC141955A5F500D610E5 /* float_ring2.png in Resources */,
 				D628FC051955597A00D610E5 /* Light_mini_On.png in Resources */,
 				D628FC0E195559A000D610E5 /* body_set.png in Resources */,
 				D628FC091955597A00D610E5 /* surf_board4.png in Resources */,

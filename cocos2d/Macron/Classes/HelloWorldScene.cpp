@@ -112,13 +112,13 @@ bool HelloWorld::init()
     scoreLabel->setPosition(Vec2(origin.x+visibleSize.width/2-scoreLabel->getContentSize().width/2,
                                  origin.y + visibleSize.height-scoreLabel->getContentSize().height/2));
     scoreLabel->setTag(10);
-    this->addChild(scoreLabel,2);
+    this->addChild(scoreLabel,5);
     //score point
     auto *scorePoint = LabelTTF::create("0", "arial", 48);
     scorePoint->setPosition(Vec2(scoreLabel->getPositionX()+scoreLabel->getContentSize().width,
                                  scoreLabel->getPositionY()));
     scorePoint->setTag(11);
-    this->addChild(scorePoint,2);
+    this->addChild(scorePoint,5);
     
     /////////////////////////////
     // 3. add your codes below...
@@ -211,6 +211,28 @@ void HelloWorld::eat(float dt){
     auto pointLabel = (LabelTTF*)this->getChildByTag(11);
     auto *points = String::createWithFormat("%d",m_points);
     pointLabel->setString(points->getCString());
+    
+    //add frame animations フレームアニメーションを追加したよ
+    Animation *frameAnime = Animation::create();
+    
+    const int frameNum = 5;
+    Sprite *animSprite = Sprite::create("c-ball-ex2.png");
+    //ここで一度スプライトとして登録したので、キャッシュされているテクスチャを取り出す。
+    Texture2D *tex = Director::getInstance()->getTextureCache()->getTextureForKey("c-ball-ex2.png");
+    for(int i = 0;i < frameNum;i++){
+        //clip the player texture for frame animation. 画像から矩形を選択してフレームとして切り抜く
+        frameAnime->addSpriteFrameWithTexture(tex, Rect(i*96, 0, 96, 96));
+    }
+    //300msec/5frame
+    frameAnime->setDelayPerUnit(0.3f/5.0f);
+    //If animation finished,set original image. アニメーション終了後、もとに戻す
+    frameAnime->setRestoreOriginalFrame(true);
+    //loop 3times. それを繰り返すこともできる
+    //frameAnime->setLoops(3);
+    
+    //do animation. アニメーションの実行
+    Animate *action = Animate::create(frameAnime);
+    player->runAction(action);
 }
 
 //touch began multi
@@ -251,7 +273,7 @@ void HelloWorld::addFood(){
     int height = rand() % (int)winSize.height;
     food->setPosition(winSize.width + food->getContentSize().width/2,height);
     food->setTag(2);
-    this->addChild(food);
+    this->addChild(food,2);
     
     //2seconds wait
     float duration = 2.0f;
@@ -262,9 +284,9 @@ void HelloWorld::addFood(){
     
     //finish action
     CallFuncN* actionMoveDone =
-    CallFuncN::create([this](Node * sender){
+       CallFuncN::create([this](Node * sender){
         this->spriteMoveFinished(sender);
-    });
+        });
     
     food->runAction(Sequence::create(actionMove,actionMoveDone,NULL));
     
