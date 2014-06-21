@@ -58,7 +58,7 @@ bool HelloWorld::init()
     //sprite2 change color
     closeSprite2->setColor(Color3B(102, 102, 102));
     MenuItemSprite *closeItem3 = MenuItemSprite::create(closeSprite1, closeSprite2,
-                                                        CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+                                                        CC_CALLBACK_0(HelloWorld::changeScene, this));
     //set distination
     closeItem3->setPosition(closeItem2->getPositionX()+closeItem2->getContentSize().width,
                             closeItem2->getPositionY());
@@ -154,6 +154,16 @@ bool HelloWorld::init()
     return true;
 }
 
+void HelloWorld::changeScene(){
+    //シーンの遷移 change scene
+    Scene *nextScene = HelloWorld::createScene();
+    float duration = 1.0f;
+    Scene *pScene = TransitionPageTurn::create(duration, nextScene,false);
+    if(pScene){
+        Director::getInstance()->replaceScene(pScene);
+    }
+}
+
 //update
 void HelloWorld::update(float dt){
     //get sprite
@@ -225,10 +235,10 @@ void HelloWorld::eat(float dt){
     }
     //300msec/5frame
     frameAnime->setDelayPerUnit(0.3f/5.0f);
+    //loop 3times. それを繰り返すこともできる
+    frameAnime->setLoops(3);
     //If animation finished,set original image. アニメーション終了後、もとに戻す
     frameAnime->setRestoreOriginalFrame(true);
-    //loop 3times. それを繰り返すこともできる
-    //frameAnime->setLoops(3);
     
     //do animation. アニメーションの実行
     Animate *action = Animate::create(frameAnime);
@@ -245,7 +255,7 @@ void HelloWorld::onTouchesBegan	(const std::vector<cocos2d::Touch * >& touches,c
             
             //get macron (tag = 1)
             Sprite *player = (Sprite*)this->getChildByTag(1);
-            player->stopAllActions();
+            player->stopActionByTag(5);
             
             //window size
             Size winSize = Director::getInstance()->getWinSize();
@@ -256,6 +266,7 @@ void HelloWorld::onTouchesBegan	(const std::vector<cocos2d::Touch * >& touches,c
             
             float duration = length / winSize.width * 1.5f;
             MoveTo* actionMove = MoveTo::create(duration, location);
+            actionMove->setTag(5);
             player->runAction(actionMove);
             
         }

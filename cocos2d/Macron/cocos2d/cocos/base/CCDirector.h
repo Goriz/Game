@@ -99,6 +99,9 @@ private:
     std::stack<Mat4> _textureMatrixStack;
 protected:
     void initMatrixStack();
+    static double getAvailableBytes();
+    static double getAvailableKiloBytes();
+    static double getAvailableMegaBytes();
 public:
     void pushMatrix(MATRIX_STACK_TYPE type);
     void popMatrix(MATRIX_STACK_TYPE type);

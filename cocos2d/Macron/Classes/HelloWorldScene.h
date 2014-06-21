@@ -31,6 +31,8 @@ public:
     
     void changeMode(Ref* pSender);
     
+    void changeScene();
+    
     void eat(float dt);
     
     // implement the "static create()" method manually

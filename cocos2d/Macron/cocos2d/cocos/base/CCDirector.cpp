@@ -63,6 +63,13 @@ THE SOFTWARE.
 #include "CCApplication.h"
 #include "CCGLView.h"
 
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+//add debug
+#include <sys/sysctl.h>
+#import <mach/mach.h>
+#import <mach/mach_host.h>
+#endif
+
 /**
  Position of the FPS
  
@@ -1070,8 +1077,13 @@ void Director::showStats()
             _frameRate = _frames / _accumDt;
             _frames = 0;
             _accumDt = 0;
-
+          #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+            //fix
+            sprintf(buffer, "%.1f / %.3f / %.1f", _frameRate, _secondsPerFrame,Director::getAvailableMegaBytes());
+          #else
             sprintf(buffer, "%.1f / %.3f", _frameRate, _secondsPerFrame);
+          #endif
+            
             _FPSLabel->setString(buffer);
         }
 
@@ -1224,6 +1236,29 @@ void Director::setEventDispatcher(EventDispatcher* dispatcher)
         _eventDispatcher = dispatcher;
     }
 }
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+double Director::getAvailableBytes(){
+    vm_statistics_data_t vmStats;
+    mach_msg_type_number_t infoCount = HOST_VM_INFO_COUNT;
+    kern_return_t kernReturn =
+         host_statistics(mach_host_self(), HOST_VM_INFO, (host_info_t)&vmStats, &infoCount);
+    
+    if(kernReturn != KERN_SUCCESS){
+        return 0.0f;
+    }
+    
+    return (vm_page_size * vmStats.free_count);
+}
+
+double Director::getAvailableKiloBytes(){
+    return Director::getAvailableBytes() / 1024.0;
+}
+
+double Director::getAvailableMegaBytes(){
+    return Director::getAvailableKiloBytes() / 1024.0;
+}
+#endif
 
 /***************************************************
 * implementation of DisplayLinkDirector
