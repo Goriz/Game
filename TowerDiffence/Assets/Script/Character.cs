@@ -50,11 +50,10 @@ public class Character : MonoBehaviour {
 	void Reverse(){
 		transform.Rotate(0, 180, 0);
 		}
-	
-	// ぶつかった瞬間に呼び出される
+
 	void OnTriggerStay2D (Collider2D c)
 	{
 			animator.SetTrigger ("Attack");
-			
+			animator.speed = 0.5f;
 	}
 }

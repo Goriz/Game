@@ -36,7 +36,9 @@
 -define:ENABLE_PROFILER
 -define:UNITY_EDITOR
 -define:UNITY_EDITOR_OSX
+'Assets/Script/Attack.cs'
 'Assets/Script/Character.cs'
+'Assets/Script/Emitter.cs'
 'Assets/Script/Enemy.cs'
 'Assets/Script/GotoMouse.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
