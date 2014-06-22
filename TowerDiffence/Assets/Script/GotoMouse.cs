@@ -19,5 +19,10 @@ public class GotoMouse : MonoBehaviour
 		}
 		transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.x, target.y), speed * Time.deltaTime);
 	}
+
+	public Vector2 getTarget()
+	{
+		return target;
+	}
 }
 
