@@ -1,4 +1,5 @@
 #include "HelloWorldScene.h"
+#include "TestScene.h"
 
 USING_NS_CC;
 
@@ -48,6 +49,7 @@ bool HelloWorld::init()
     //*nomal item
     MenuItemImage* closeItem2 =MenuItemImage::create("surf_board2.png", "surf_board4.png",
                                                      CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+    
     //add destination
     closeItem2->setPosition(Vec2(origin.x+closeItem2->getContentSize().width/2,
                                  origin.y+closeItem2->getContentSize().height/2));
@@ -156,7 +158,7 @@ bool HelloWorld::init()
 
 void HelloWorld::changeScene(){
     //シーンの遷移 change scene
-    Scene *nextScene = HelloWorld::createScene();
+    Scene *nextScene = TestScene::createScene();
     float duration = 1.0f;
     Scene *pScene = TransitionPageTurn::create(duration, nextScene,false);
     if(pScene){
