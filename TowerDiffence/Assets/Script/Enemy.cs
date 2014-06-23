@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour {
 	private Animator animator;
 	private int doWalkId;
 	private Vector2 director;
+	private GameObject collider;
 
 	// Use this for initialization
 	void Start () {
@@ -38,6 +39,7 @@ public class Enemy : MonoBehaviour {
 		animator.SetTrigger ("Attack");
 
 		director = c.gameObject.transform.position;
+		collider = c.gameObject;
 
 		// ヒットポイントを減らす
 		hp = hp - 1;
@@ -48,6 +50,13 @@ public class Enemy : MonoBehaviour {
 			// エネミーの削除
 			Destroy (gameObject);
 		}
+	}
+
+	// After attack animation
+	void Attack()
+	{
+		print ("attack");
+		collider.gameObject.SendMessage("ApplyDamage", 1);
 	}
 
 }
