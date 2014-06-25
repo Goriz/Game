@@ -12,6 +12,15 @@
 #include <iostream>
 #include <cocos2d.h>
 
+//OS間で違いがある
+#if(CC_PLATFORM_ANDROID == CC_TARGET_PLATFORM)
+#include "extensions/cocos-ext.h"
+#elif(CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+#include "cocos-ext.h"
+#endif
+
+USING_NS_CC_EXT;
+
 class TestScene : public cocos2d::LayerGradient
 {
 protected:
@@ -32,7 +41,7 @@ public:
     CREATE_FUNC(TestScene);
 };
 
-class SceneTestLayer1 : public cocos2d::Layer
+class SceneTestLayer1 : public cocos2d::Layer,ScrollViewDelegate
 {
 public:
     SceneTestLayer1();
@@ -50,6 +59,9 @@ public:
     
     void flipCard2();
     
+private:
+    void scrollViewDidScroll(ScrollView* view);
+    void scrollViewDidZoom(ScrollView* view);
     //CREATE_NODE(SceneTestLayer1);
 } ;
 

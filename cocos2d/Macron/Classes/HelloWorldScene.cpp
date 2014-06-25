@@ -1,5 +1,5 @@
 #include "HelloWorldScene.h"
-#include "TestScene.h"
+#include "TestScene2.h"
 
 USING_NS_CC;
 
@@ -157,8 +157,8 @@ bool HelloWorld::init()
 }
 
 void HelloWorld::changeScene(){
-    //シーンの遷移 change scene
-    Scene *nextScene = TestScene::createScene();
+    //シーンの遷移 change scene a
+    auto *nextScene = TestScene2::createScene();
     float duration = 1.0f;
     Scene *pScene = TransitionPageTurn::create(duration, nextScene,false);
     if(pScene){

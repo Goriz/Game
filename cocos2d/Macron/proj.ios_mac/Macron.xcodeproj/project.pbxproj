@@ -78,8 +78,6 @@
 		D628FC071955597A00D610E5 /* surf_board2.png in Resources */ = {isa = PBXBuildFile; fileRef = D628FBFE1955597A00D610E5 /* surf_board2.png */; };
 		D628FC081955597A00D610E5 /* surf_board4.png in Resources */ = {isa = PBXBuildFile; fileRef = D628FBFF1955597A00D610E5 /* surf_board4.png */; };
 		D628FC091955597A00D610E5 /* surf_board4.png in Resources */ = {isa = PBXBuildFile; fileRef = D628FBFF1955597A00D610E5 /* surf_board4.png */; };
-		D628FC0D195559A000D610E5 /* body_set.png in Resources */ = {isa = PBXBuildFile; fileRef = D628FC0C195559A000D610E5 /* body_set.png */; };
-		D628FC0E195559A000D610E5 /* body_set.png in Resources */ = {isa = PBXBuildFile; fileRef = D628FC0C195559A000D610E5 /* body_set.png */; };
 		D628FC131955A5F500D610E5 /* float_ring2.png in Resources */ = {isa = PBXBuildFile; fileRef = D628FC121955A5F500D610E5 /* float_ring2.png */; };
 		D628FC141955A5F500D610E5 /* float_ring2.png in Resources */ = {isa = PBXBuildFile; fileRef = D628FC121955A5F500D610E5 /* float_ring2.png */; };
 		D628FC181955AD0C00D610E5 /* c-ball-ex2.png in Resources */ = {isa = PBXBuildFile; fileRef = D628FC171955AD0C00D610E5 /* c-ball-ex2.png */; };
@@ -87,6 +85,18 @@
 		D650D3161956967800F562B0 /* TestScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D650D3141956967800F562B0 /* TestScene.cpp */; };
 		D650D3171956967800F562B0 /* TestScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D650D3141956967800F562B0 /* TestScene.cpp */; };
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
+		D6C9D4ED195AEBF100FE3E4B /* board.png in Resources */ = {isa = PBXBuildFile; fileRef = D6C9D4EB195AEBF100FE3E4B /* board.png */; };
+		D6C9D4EE195AEBF100FE3E4B /* board.png in Resources */ = {isa = PBXBuildFile; fileRef = D6C9D4EB195AEBF100FE3E4B /* board.png */; };
+		D6C9D4EF195AEBF100FE3E4B /* body_set.png in Resources */ = {isa = PBXBuildFile; fileRef = D6C9D4EC195AEBF100FE3E4B /* body_set.png */; };
+		D6C9D4F0195AEBF100FE3E4B /* body_set.png in Resources */ = {isa = PBXBuildFile; fileRef = D6C9D4EC195AEBF100FE3E4B /* body_set.png */; };
+		D6C9D500195AFD7B00FE3E4B /* MultiDisp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6C9D4FE195AFD7B00FE3E4B /* MultiDisp.cpp */; };
+		D6C9D501195AFD7B00FE3E4B /* MultiDisp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6C9D4FE195AFD7B00FE3E4B /* MultiDisp.cpp */; };
+		D6C9D505195B00FF00FE3E4B /* TapSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6C9D503195B00FF00FE3E4B /* TapSprite.cpp */; };
+		D6C9D506195B00FF00FE3E4B /* TapSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6C9D503195B00FF00FE3E4B /* TapSprite.cpp */; };
+		D6C9D50D195B248A00FE3E4B /* ModalLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6C9D50B195B248A00FE3E4B /* ModalLayer.cpp */; };
+		D6C9D50E195B248A00FE3E4B /* ModalLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6C9D50B195B248A00FE3E4B /* ModalLayer.cpp */; };
+		D6CEFFAD195966D800746C22 /* TestScene2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6CEFFAB195966D800746C22 /* TestScene2.cpp */; };
+		D6CEFFAE195966D800746C22 /* TestScene2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6CEFFAB195966D800746C22 /* TestScene2.cpp */; };
 		D6DE777C19586B8D008F9AFF /* f113.png in Resources */ = {isa = PBXBuildFile; fileRef = D6DE777A19586B8D008F9AFF /* f113.png */; };
 		D6DE777D19586B8D008F9AFF /* f113.png in Resources */ = {isa = PBXBuildFile; fileRef = D6DE777A19586B8D008F9AFF /* f113.png */; };
 		D6DE777E19586B8D008F9AFF /* f115.png in Resources */ = {isa = PBXBuildFile; fileRef = D6DE777B19586B8D008F9AFF /* f115.png */; };
@@ -293,12 +303,21 @@
 		D628FBFD1955597A00D610E5 /* Light_mini_On.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Light_mini_On.png; sourceTree = "<group>"; };
 		D628FBFE1955597A00D610E5 /* surf_board2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = surf_board2.png; sourceTree = "<group>"; };
 		D628FBFF1955597A00D610E5 /* surf_board4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = surf_board4.png; sourceTree = "<group>"; };
-		D628FC0C195559A000D610E5 /* body_set.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = body_set.png; sourceTree = "<group>"; };
 		D628FC121955A5F500D610E5 /* float_ring2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = float_ring2.png; sourceTree = "<group>"; };
 		D628FC171955AD0C00D610E5 /* c-ball-ex2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "c-ball-ex2.png"; sourceTree = "<group>"; };
 		D650D3141956967800F562B0 /* TestScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestScene.cpp; path = ../Classes/TestScene.cpp; sourceTree = "<group>"; };
 		D650D3151956967800F562B0 /* TestScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestScene.h; path = ../Classes/TestScene.h; sourceTree = "<group>"; };
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		D6C9D4EB195AEBF100FE3E4B /* board.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = board.png; sourceTree = "<group>"; };
+		D6C9D4EC195AEBF100FE3E4B /* body_set.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = body_set.png; sourceTree = "<group>"; };
+		D6C9D4FE195AFD7B00FE3E4B /* MultiDisp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MultiDisp.cpp; sourceTree = "<group>"; };
+		D6C9D4FF195AFD7B00FE3E4B /* MultiDisp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiDisp.h; sourceTree = "<group>"; };
+		D6C9D503195B00FF00FE3E4B /* TapSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TapSprite.cpp; path = ../Classes/TapSprite.cpp; sourceTree = "<group>"; };
+		D6C9D504195B00FF00FE3E4B /* TapSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapSprite.h; path = ../Classes/TapSprite.h; sourceTree = "<group>"; };
+		D6C9D50B195B248A00FE3E4B /* ModalLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ModalLayer.cpp; path = ../Classes/ModalLayer.cpp; sourceTree = "<group>"; };
+		D6C9D50C195B248A00FE3E4B /* ModalLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModalLayer.h; path = ../Classes/ModalLayer.h; sourceTree = "<group>"; };
+		D6CEFFAB195966D800746C22 /* TestScene2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestScene2.cpp; path = ../Classes/TestScene2.cpp; sourceTree = "<group>"; };
+		D6CEFFAC195966D800746C22 /* TestScene2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestScene2.h; path = ../Classes/TestScene2.h; sourceTree = "<group>"; };
 		D6DE777A19586B8D008F9AFF /* f113.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f113.png; sourceTree = "<group>"; };
 		D6DE777B19586B8D008F9AFF /* f115.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f115.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -370,12 +389,18 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D6C9D502195B00CB00FE3E4B /* gadget */,
+				D6C9D4F8195AF75C00FE3E4B /* macros */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */,
 				1AFAF8B616D35DE700DB1158 /* HelloWorldScene.h */,
 				D650D3141956967800F562B0 /* TestScene.cpp */,
 				D650D3151956967800F562B0 /* TestScene.h */,
+				D6CEFFAB195966D800746C22 /* TestScene2.cpp */,
+				D6CEFFAC195966D800746C22 /* TestScene2.h */,
+				D6C9D50B195B248A00FE3E4B /* ModalLayer.cpp */,
+				D6C9D50C195B248A00FE3E4B /* ModalLayer.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -491,11 +516,12 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D6C9D4EB195AEBF100FE3E4B /* board.png */,
+				D6C9D4EC195AEBF100FE3E4B /* body_set.png */,
 				D6DE777A19586B8D008F9AFF /* f113.png */,
 				D6DE777B19586B8D008F9AFF /* f115.png */,
 				D628FC171955AD0C00D610E5 /* c-ball-ex2.png */,
 				D628FC121955A5F500D610E5 /* float_ring2.png */,
-				D628FC0C195559A000D610E5 /* body_set.png */,
 				D628FBFB1955597A00D610E5 /* float_ring.png */,
 				D628FBFC1955597A00D610E5 /* Light_mini_Off.png */,
 				D628FBFD1955597A00D610E5 /* Light_mini_On.png */,
@@ -507,6 +533,25 @@
 			);
 			name = Resources;
 			path = ../Resources;
+			sourceTree = "<group>";
+		};
+		D6C9D4F8195AF75C00FE3E4B /* macros */ = {
+			isa = PBXGroup;
+			children = (
+				D6C9D4FE195AFD7B00FE3E4B /* MultiDisp.cpp */,
+				D6C9D4FF195AFD7B00FE3E4B /* MultiDisp.h */,
+			);
+			name = macros;
+			path = ../Classes;
+			sourceTree = "<group>";
+		};
+		D6C9D502195B00CB00FE3E4B /* gadget */ = {
+			isa = PBXGroup;
+			children = (
+				D6C9D503195B00FF00FE3E4B /* TapSprite.cpp */,
+				D6C9D504195B00FF00FE3E4B /* TapSprite.h */,
+			);
+			name = gadget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -682,10 +727,10 @@
 				D628FC131955A5F500D610E5 /* float_ring2.png in Resources */,
 				D628FC081955597A00D610E5 /* surf_board4.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
-				D628FC0D195559A000D610E5 /* body_set.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				D628FC041955597A00D610E5 /* Light_mini_On.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
+				D6C9D4EF195AEBF100FE3E4B /* body_set.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
@@ -696,6 +741,7 @@
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
+				D6C9D4ED195AEBF100FE3E4B /* board.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				D628FC021955597A00D610E5 /* Light_mini_Off.png in Resources */,
@@ -709,11 +755,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6C9D4EE195AEBF100FE3E4B /* board.png in Resources */,
 				D628FC191955AD0C00D610E5 /* c-ball-ex2.png in Resources */,
 				D628FC011955597A00D610E5 /* float_ring.png in Resources */,
 				D628FC141955A5F500D610E5 /* float_ring2.png in Resources */,
 				D628FC051955597A00D610E5 /* Light_mini_On.png in Resources */,
-				D628FC0E195559A000D610E5 /* body_set.png in Resources */,
 				D628FC091955597A00D610E5 /* surf_board4.png in Resources */,
 				D6DE777F19586B8D008F9AFF /* f115.png in Resources */,
 				5087E75317EB910900C73F5D /* CloseNormal.png in Resources */,
@@ -721,6 +767,7 @@
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				D628FC031955597A00D610E5 /* Light_mini_Off.png in Resources */,
 				5087E75417EB910900C73F5D /* CloseSelected.png in Resources */,
+				D6C9D4F0195AEBF100FE3E4B /* body_set.png in Resources */,
 				5087E75517EB910900C73F5D /* HelloWorld.png in Resources */,
 				D6DE777D19586B8D008F9AFF /* f113.png in Resources */,
 			);
@@ -734,7 +781,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D650D3161956967800F562B0 /* TestScene.cpp in Sources */,
+				D6C9D50D195B248A00FE3E4B /* ModalLayer.cpp in Sources */,
+				D6C9D505195B00FF00FE3E4B /* TapSprite.cpp in Sources */,
+				D6C9D500195AFD7B00FE3E4B /* MultiDisp.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				D6CEFFAD195966D800746C22 /* TestScene2.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
@@ -747,9 +798,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D650D3171956967800F562B0 /* TestScene.cpp in Sources */,
+				D6C9D50E195B248A00FE3E4B /* ModalLayer.cpp in Sources */,
 				5087E75717EB910900C73F5D /* AppDelegate.cpp in Sources */,
+				D6C9D506195B00FF00FE3E4B /* TapSprite.cpp in Sources */,
 				5087E75817EB910900C73F5D /* HelloWorldScene.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				D6CEFFAE195966D800746C22 /* TestScene2.cpp in Sources */,
+				D6C9D501195AFD7B00FE3E4B /* MultiDisp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -72,8 +72,35 @@ bool TestScene::init()
     }
     
     
-    this->schedule(schedule_selector(TestScene::gameLogic), 0.02f);
+    ////////////////////////////////////////
+    //sprite woker test　スプライト負荷テスト
+    //** 結果的に不変 **
+    //Spriteもキャッシュからtextureを生成しているから
+    //android上だとテクスチャの重なりからか表示が変。
+    ////////////////////////////////////////
+    bool isBach = true;
+    SpriteBatchNode *bach;
+    if(isBach){
+        bach = SpriteBatchNode::create("float_ring2.png");
+        this->addChild(bach,0);
+    }
+    
+    for(int i= 0;i < 500;i++){
+        Sprite *sprite = isBach ? Sprite::createWithTexture(bach->getTexture())
+                                :Sprite::create("float_ring2.png");
+        float x = CCRANDOM_0_1()*visibleSize.width;
+        float y = CCRANDOM_0_1()*visibleSize.height;
+        sprite->setPosition(Vec2(x, y));
+        bach->addChild(sprite);
+        
+        //random fade out
+        FadeOut *fade = FadeOut::create(CCRANDOM_0_1()*10);
+        sprite->runAction(fade);
+    }
+    
+   // this->schedule(schedule_selector(TestScene::gameLogic), 0.02f);
     m_cont = 0;
+    
     return true;
 }
 
@@ -90,7 +117,7 @@ void TestScene::gameLogic(float dt){
         clip->addChild(sp);
         clip->setTag(6);
         
-        this->addChild(clip);
+        this->addChild(clip,7);
         m_cont = (m_cont + 1) % 25;
     }
 }
@@ -147,8 +174,34 @@ SceneTestLayer1::SceneTestLayer1()
     auto repeat = RepeatForever::create(rotate);
     sprite->runAction(repeat);
     
+    //scrollview
+    Size size = Director::getInstance()->getVisibleSize();
+    ScrollView* sView = ScrollView::create(size);
+    sView->setContentSize(Size(1000, 1000));
+    auto con = Sprite::create();
+    con->setContentSize(Size(1000, 2000));
+    con->setAnchorPoint(Vec2::ZERO);
+    sView->setContainer(con);
+    sView->setPosition(Vec2::ZERO);
+    sView->setDelegate(this); //delegate
+    sView->setTag(20);
+   // sView->setZoomScale(0.5); ver3.1.1 stil not work
+    this->addChild(sView);
+    
     schedule( schedule_selector(SceneTestLayer1::testDealloc),3.0f);
 }
+
+//scrollView did scroll
+void SceneTestLayer1::scrollViewDidScroll(cocos2d::extension::ScrollView *view)
+{
+    
+}
+//scrollview
+void SceneTestLayer1::scrollViewDidZoom(cocos2d::extension::ScrollView *view)
+{
+    
+}
+
 
 void SceneTestLayer1::testDealloc(float dt)
 {
@@ -190,22 +243,24 @@ void SceneTestLayer1::flipCard()
 {
     Size size = Director::getInstance()->getWinSize();
     
+    ScrollView* sv = (ScrollView*)this->getChildByTag(20);
+    
     //back of card カードの裏面
-    Sprite *card = (Sprite*)this->getChildByTag(CARD_FACE_TAG);
+    Sprite *card = (Sprite*)sv->getContainer()->getChildByTag(CARD_FACE_TAG);
     if(!card){
         card = Sprite::create("f113.png");
-        card->setPosition(Vec2(size.width/2, size.height/2));
-        this->addChild(card, CARD_FACE_TAG, CARD_FACE_TAG);
+        card->setPosition(Vec2(size.width/2, size.height/2+200));
+        sv->addChild(card, CARD_FACE_TAG, CARD_FACE_TAG);
         card->setVisible(false);
         isFace = false;
     }
     
     //front of card カード表面
-    Sprite *card2 = (Sprite*)this->getChildByTag(CARD_BACK_TAG);
+    Sprite *card2 = (Sprite*)sv->getContainer()->getChildByTag(CARD_BACK_TAG);
     if(!card2){
         card2 = Sprite::create("f115.png");
         card2->setPosition(card->getPosition());
-        this->addChild(card2,CARD_BACK_TAG,CARD_BACK_TAG);
+        sv->addChild(card2,CARD_BACK_TAG,CARD_BACK_TAG);
     }
     
     Sprite *card3 = isFace ? card : card2;
@@ -219,13 +274,22 @@ void SceneTestLayer1::flipCard()
 
 void SceneTestLayer1::flipCard2()
 {
-    Sprite *card = (Sprite*)this->getChildByTag(CARD_FACE_TAG);
-    Sprite *card2 = (Sprite*)this->getChildByTag(CARD_BACK_TAG);
+    ScrollView* sv = (ScrollView*)this->getChildByTag(20);
+    ////////////////////////////////////////////////////////
+    // ** ここ大事 **
+    // ScrollViewの中にはContainerというレイヤーがおり、
+    //　そこに描写している感じになっている。
+    //　よってScrollViewの子要素を取りたいときは、コンテナにアクセス
+    //　する必要がある。
+    /////////////////////////////////////////////////////////
+    Sprite *card = (Sprite*)sv->getContainer()->getChildByTag(CARD_FACE_TAG);
+    Sprite *card2 = (Sprite*)sv->getContainer()->getChildByTag(CARD_BACK_TAG);
     Sprite *card3 = isFace ? card2 : card;
+    
     isFace = !isFace;
     Show *show = Show::create();
     OrbitCamera *turn = OrbitCamera::create(FLIP_DURATION/2.0f, 1, 0, 270.0f, 90.0f, 0, 0);
-    card3->runAction(Sequence::create(show,turn, NULL));
+    if(card3) card3->runAction(Sequence::create(show,turn, NULL));
 }
 
 void SceneTestLayer1::onQuit(Ref* sender)

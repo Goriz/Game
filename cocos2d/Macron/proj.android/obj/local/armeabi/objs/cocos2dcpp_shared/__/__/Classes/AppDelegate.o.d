@@ -21,6 +21,7 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/AppDelegate.o: \
  /Users/kodaitomoto/softs/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/stdint.h \
  /Users/kodaitomoto/softs/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/_types.h \
  /Users/kodaitomoto/softs/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/machine/_types.h \
+ /Users/kodaitomoto/softs/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/_wchar_limits.h \
  /Users/kodaitomoto/softs/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/linux/posix_types.h \
  /Users/kodaitomoto/softs/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/linux/stddef.h \
  /Users/kodaitomoto/softs/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/linux/compiler.h \
@@ -355,6 +356,8 @@ jni/../../Classes/AppDelegate.h:
 /Users/kodaitomoto/softs/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/_types.h:
 
 /Users/kodaitomoto/softs/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/machine/_types.h:
+
+/Users/kodaitomoto/softs/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/_wchar_limits.h:
 
 /Users/kodaitomoto/softs/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/linux/posix_types.h:
 

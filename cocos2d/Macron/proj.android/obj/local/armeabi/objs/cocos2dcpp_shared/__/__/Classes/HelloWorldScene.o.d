@@ -22,6 +22,7 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/HelloWorldScene.o: \
  /Users/kodaitomoto/softs/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/stdint.h \
  /Users/kodaitomoto/softs/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/_types.h \
  /Users/kodaitomoto/softs/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/machine/_types.h \
+ /Users/kodaitomoto/softs/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/_wchar_limits.h \
  /Users/kodaitomoto/softs/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/linux/posix_types.h \
  /Users/kodaitomoto/softs/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/linux/stddef.h \
  /Users/kodaitomoto/softs/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/linux/compiler.h \
@@ -310,7 +311,38 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/HelloWorldScene.o: \
  /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/cocos/./deprecated/CCBool.h \
  /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/cocos/./deprecated/CCString.h \
  /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/cocos/./deprecated/CCNotificationCenter.h \
- /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/cocos/./deprecated/CCDeprecated.h
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/cocos/./deprecated/CCDeprecated.h \
+ jni/../../Classes/TestScene2.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/cocos-ext.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/ExtensionMacros.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCControlExtensions.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCScale9Sprite.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/../../ExtensionMacros.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCControl.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCControlUtils.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCControlButton.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCInvocation.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCControlColourPicker.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCControlHuePicker.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCControlSaturationBrightnessPicker.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCControlPotentiometer.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/cocos/./2d/CCProgressTimer.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCControlSlider.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCControlStepper.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCControlSwitch.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCScrollView/CCScrollView.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/cocos/./base/CCEventListenerTouch.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/cocos/./2d/CCActionTween.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/ExtensionMacros.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCScrollView/CCTableView.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCScrollView/CCScrollView.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCScrollView/CCTableViewCell.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCEditBox/CCEditBox.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCEditBox/../CCControlExtension/CCControlExtensions.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/physics-nodes/CCPhysicsDebugNode.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/cocos/./2d/CCDrawNode.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/physics-nodes/CCPhysicsSprite.h \
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/assets-manager/AssetsManager.h
 
 jni/../../Classes/HelloWorldScene.h:
 
@@ -355,6 +387,8 @@ jni/../../Classes/HelloWorldScene.h:
 /Users/kodaitomoto/softs/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/_types.h:
 
 /Users/kodaitomoto/softs/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/machine/_types.h:
+
+/Users/kodaitomoto/softs/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/_wchar_limits.h:
 
 /Users/kodaitomoto/softs/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/linux/posix_types.h:
 
@@ -933,3 +967,65 @@ jni/../../Classes/HelloWorldScene.h:
 /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/cocos/./deprecated/CCNotificationCenter.h:
 
 /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/cocos/./deprecated/CCDeprecated.h:
+
+jni/../../Classes/TestScene2.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/cocos-ext.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/ExtensionMacros.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCControlExtensions.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCScale9Sprite.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/../../ExtensionMacros.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCControl.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCControlUtils.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCControlButton.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCInvocation.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCControlColourPicker.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCControlHuePicker.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCControlSaturationBrightnessPicker.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCControlPotentiometer.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/cocos/./2d/CCProgressTimer.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCControlSlider.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCControlStepper.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCControlExtension/CCControlSwitch.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCScrollView/CCScrollView.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/cocos/./base/CCEventListenerTouch.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/cocos/./2d/CCActionTween.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/ExtensionMacros.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCScrollView/CCTableView.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCScrollView/CCScrollView.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCScrollView/CCTableViewCell.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCEditBox/CCEditBox.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/GUI/CCEditBox/../CCControlExtension/CCControlExtensions.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/physics-nodes/CCPhysicsDebugNode.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/cocos/./2d/CCDrawNode.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/physics-nodes/CCPhysicsSprite.h:
+
+/Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/assets-manager/AssetsManager.h:
