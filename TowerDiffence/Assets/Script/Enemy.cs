@@ -3,8 +3,10 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour {
 
-	public int hp = 100;
+	public int hp = 10;
+	public int attack = 1;
 	public float speed = 5f;
+
 	
 	// アニメーターコンポーネント
 	private Animator animator;
@@ -45,9 +47,6 @@ public class Enemy : MonoBehaviour {
 
 		animator.SetTrigger ("Attack");
 
-		// ヒットポイントを減らす
-		//hp = hp - 1;
-
 	}
 
 	void OnTriggerEnter2D(Collider2D c){
@@ -61,7 +60,12 @@ public class Enemy : MonoBehaviour {
 	void Attack()
 	{
 		print ("attack");
-		collider.gameObject.SendMessage("ApplyDamage", 1);
+		collider.gameObject.SendMessage("ApplyDamage", attack);
+	}
+
+	void ApplyDamage(int damage)
+	{
+		hp = hp - damage;
 	}
 
 }

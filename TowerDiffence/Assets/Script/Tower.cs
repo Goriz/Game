@@ -3,16 +3,16 @@ using System.Collections;
 
 public class Tower : MonoBehaviour {
 
-	public int hp = 1;
-	public int sumdamage = 0;
-	int parcent = 1;
-
-	private Gage towergage = null;
+	public float hp = 10;
+	public float sumdamage = 0;
+	private float max_hp;
+	float parcent = 1;
+	GameObject gage = null;
 
 	// Use this for initialization
 	void Start () {
-		towergage = GetComponent<Gage> ();
-
+		gage = GameObject.Find ("gage");
+		max_hp = hp;
 	}
 	
 	// Update is called once per frame
@@ -29,9 +29,11 @@ public class Tower : MonoBehaviour {
 	{
 		hp = hp - damage;
 		sumdamage = sumdamage + damage;
-		parcent = sumdamage / hp;
+		print (sumdamage);
+		parcent = hp / max_hp;
+		print ("tower:" + parcent);
 
-		//towergage.gameObject.SendMessage("gageControl", parcent);
+		gage.SendMessage("gageControl", parcent);
 	}
 	
 }
