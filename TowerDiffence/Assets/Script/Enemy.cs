@@ -31,18 +31,6 @@ public class Enemy : MonoBehaviour {
 		}
 		
 		transform.position = Vector2.MoveTowards(transform.position, director, speed * Time.deltaTime);
-	}
-	
-	void OnTriggerStay2D (Collider2D c)
-	{
-
-		animator.SetTrigger ("Attack");
-
-		director = c.gameObject.transform.position;
-		collider = c.gameObject;
-
-		// ヒットポイントを減らす
-		hp = hp - 1;
 
 		// ヒットポイントが0以下であれば
 		if(hp <= 0 )
@@ -51,6 +39,23 @@ public class Enemy : MonoBehaviour {
 			Destroy (gameObject);
 		}
 	}
+	
+	void OnTriggerStay2D (Collider2D c)
+	{
+
+		animator.SetTrigger ("Attack");
+
+		// ヒットポイントを減らす
+		//hp = hp - 1;
+
+	}
+
+	void OnTriggerEnter2D(Collider2D c){
+		print("Enter2D");
+		director = new Vector2 (transform.position.x, transform.position.y);
+		//director = c.gameObject.transform.position;
+		collider = c.gameObject;
+		}
 
 	// After attack animation
 	void Attack()

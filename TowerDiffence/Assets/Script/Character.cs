@@ -13,6 +13,8 @@ public class Character : MonoBehaviour {
 	private Vector2 current_target;
 
 	public int attack = 1;
+	public int hp = 1;
+	int sumdamage = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -44,6 +46,13 @@ public class Character : MonoBehaviour {
 			director = RIGHT;
 		}
 
+		// ヒットポイントが0以下であれば
+		if(hp <= 0 )
+		{
+			// エネミーの削除
+			Destroy (gameObject);
+		}
+
 
 	}
 
@@ -54,6 +63,12 @@ public class Character : MonoBehaviour {
 	void OnTriggerStay2D (Collider2D c)
 	{
 			animator.SetTrigger ("Attack");
-			animator.speed = 0.5f;
+	}
+
+
+	void ApplyDamage(int damage)
+	{
+		hp = hp - damage;
+		sumdamage = sumdamage + damage;
 	}
 }
