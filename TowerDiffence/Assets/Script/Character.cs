@@ -77,7 +77,8 @@ public class Character : MonoBehaviour {
 
 	void OnTriggerStay2D (Collider2D c)
 	{
-		if (hitObject.collider.gameObject != null) {
+		//if (hitObject.collider.gameObject != null) {
+		if (c.gameObject != null) {
 			animator.SetTrigger ("Attack");
 		}
 	}
