@@ -12,6 +12,7 @@ public class Character : MonoBehaviour {
 	private Vector2 rotation;
 	private Vector2 current_target;
 	private GameObject collider;
+	private RaycastHit2D hitObject;
 
 	public float speed = 5f;
 	public int attack = 5;
@@ -37,7 +38,7 @@ public class Character : MonoBehaviour {
 			Vector2 tapPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			Collider2D collition2d = Physics2D.OverlapPoint(tapPoint);
 			if (collition2d) {
-				RaycastHit2D hitObject = Physics2D.Raycast(tapPoint,-Vector2.up);
+				hitObject = Physics2D.Raycast(tapPoint,-Vector2.up);
 				if (hitObject) {
 					Debug.Log("hit object is " + hitObject.collider.gameObject.name);
 					director = hitObject.collider.gameObject.transform.position;
@@ -76,7 +77,9 @@ public class Character : MonoBehaviour {
 
 	void OnTriggerStay2D (Collider2D c)
 	{
-		animator.SetTrigger ("Attack");
+		if (hitObject.collider.gameObject != null) {
+			animator.SetTrigger ("Attack");
+		}
 	}
 
 	void OnTriggerEnter2D (Collider2D c)
@@ -89,7 +92,6 @@ public class Character : MonoBehaviour {
 	void Attack()
 	{
 		if (collider != null) {
-			print ("attack");
 			collider.gameObject.SendMessage ("ApplyDamage", attack);
 		}
 	}

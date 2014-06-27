@@ -16,31 +16,53 @@ public class Enemy : MonoBehaviour {
 	private Vector2 director;
 	private GameObject collider = null;
 	private bool col = false;
+	private bool atk = false;
 
 	// Use this for initialization
-	void Start () {
+	IEnumerator Start () {
 		// アニメーターコンポーネントを取得
 		animator = GetComponent<Animator> ();
 
 		doWalkId = Animator.StringToHash ("DoWalk");
 
 		director = new Vector2 (0, 0);
+
+		while (true) 
+		{
+			atk = false;
+			if(col == true){
+				atk = true;
+				animator.SetTrigger ("Attack");
+				yield return new WaitForSeconds(2.0f);
+			}
+			yield return new WaitForSeconds(0.05f);
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (0 != transform.position.x) {
+
+		if (atk == false) {
 			animator.SetBool(doWalkId, true);
 		}else{
 			animator.SetBool(doWalkId, false);
 		}
-
-		if (collider != null && col == false) 
-		{
+		
+		//When Attacked by Player
+		if (collider != null && col == false) {
 			director = collider.transform.position;
 		}
-		
-		transform.position = Vector2.MoveTowards(transform.position, director, speed * Time.deltaTime);
+
+		//When Player Destroy
+		if (collider == null) {
+			director = new Vector2 (0, 0);
+		}
+
+		//Not Attacking
+		if (atk == false) {
+
+			transform.position = Vector2.MoveTowards (transform.position, director, speed * Time.deltaTime);
+		}
 
 		// ヒットポイントが0以下であれば
 		if(hp <= 0 )
@@ -66,8 +88,6 @@ public class Enemy : MonoBehaviour {
 	void OnTriggerStay2D (Collider2D c)
 	{
 		director = transform.position;
-		animator.SetTrigger ("Attack");
-
 	}
 
 	void OnTriggerEnter2D(Collider2D c){

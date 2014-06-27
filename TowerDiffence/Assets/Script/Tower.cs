@@ -29,9 +29,7 @@ public class Tower : MonoBehaviour {
 	{
 		hp = hp - damage;
 		sumdamage = sumdamage + damage;
-		print (sumdamage);
 		parcent = hp / max_hp;
-		print ("tower:" + parcent);
 
 		gage.SendMessage("gageControl", parcent);
 	}
