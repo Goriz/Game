@@ -76,11 +76,12 @@ public class Character : MonoBehaviour {
 
 	void OnTriggerStay2D (Collider2D c)
 	{
-			animator.SetTrigger ("Attack");
+		animator.SetTrigger ("Attack");
 	}
 
 	void OnTriggerEnter2D (Collider2D c)
 	{
+		director = transform.position;
 		collider = c.gameObject;
 	}
 
