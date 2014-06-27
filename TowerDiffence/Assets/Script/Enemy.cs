@@ -60,7 +60,6 @@ public class Enemy : MonoBehaviour {
 
 		//Not Attacking
 		if (atk == false) {
-
 			transform.position = Vector2.MoveTowards (transform.position, director, speed * Time.deltaTime);
 		}
 
@@ -68,7 +67,7 @@ public class Enemy : MonoBehaviour {
 		if(hp <= 0 )
 		{
 			// エネミーの削除
-			Destroy (gameObject);
+			animator.SetTrigger ("Dead");
 		}
 
 		if(director.x < transform.position.x && L_or_R == RIGHT){
@@ -109,8 +108,15 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 
+	// After dead animation
+	void Dead()
+	{
+		Destroy (gameObject);
+	}
+
 	void ApplyDamage(int damage)
 	{
+		animator.SetTrigger ("Damage");
 		hp = hp - damage;
 	}
 
