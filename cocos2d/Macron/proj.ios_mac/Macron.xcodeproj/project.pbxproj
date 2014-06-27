@@ -84,7 +84,23 @@
 		D628FC191955AD0C00D610E5 /* c-ball-ex2.png in Resources */ = {isa = PBXBuildFile; fileRef = D628FC171955AD0C00D610E5 /* c-ball-ex2.png */; };
 		D650D3161956967800F562B0 /* TestScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D650D3141956967800F562B0 /* TestScene.cpp */; };
 		D650D3171956967800F562B0 /* TestScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D650D3141956967800F562B0 /* TestScene.cpp */; };
+		D6A96B0B195DB6B9004F1118 /* title2.png in Resources */ = {isa = PBXBuildFile; fileRef = D6A96B0A195DB6B9004F1118 /* title2.png */; };
+		D6A96B0C195DB6B9004F1118 /* title2.png in Resources */ = {isa = PBXBuildFile; fileRef = D6A96B0A195DB6B9004F1118 /* title2.png */; };
+		D6A96B10195DD9B1004F1118 /* f113f.png in Resources */ = {isa = PBXBuildFile; fileRef = D6A96B0F195DD9B1004F1118 /* f113f.png */; };
+		D6A96B11195DD9B1004F1118 /* f113f.png in Resources */ = {isa = PBXBuildFile; fileRef = D6A96B0F195DD9B1004F1118 /* f113f.png */; };
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
+		D6B5D190195C1819005BF99F /* FadeoutTouchLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B5D18E195C1819005BF99F /* FadeoutTouchLine.cpp */; };
+		D6B5D191195C1819005BF99F /* FadeoutTouchLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B5D18E195C1819005BF99F /* FadeoutTouchLine.cpp */; };
+		D6B5D19A195C5C62005BF99F /* ParaScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B5D198195C5C62005BF99F /* ParaScene.cpp */; };
+		D6B5D19B195C5C62005BF99F /* ParaScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6B5D198195C5C62005BF99F /* ParaScene.cpp */; };
+		D6B5D1A0195C6083005BF99F /* pipo-battlebg001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D6B5D19C195C6083005BF99F /* pipo-battlebg001.jpg */; };
+		D6B5D1A1195C6083005BF99F /* pipo-battlebg001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D6B5D19C195C6083005BF99F /* pipo-battlebg001.jpg */; };
+		D6B5D1A2195C6083005BF99F /* pipo-battlebg001a.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D6B5D19D195C6083005BF99F /* pipo-battlebg001a.jpg */; };
+		D6B5D1A3195C6083005BF99F /* pipo-battlebg001a.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D6B5D19D195C6083005BF99F /* pipo-battlebg001a.jpg */; };
+		D6B5D1A4195C6083005BF99F /* pipo-battlebg002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D6B5D19E195C6083005BF99F /* pipo-battlebg002.jpg */; };
+		D6B5D1A5195C6083005BF99F /* pipo-battlebg002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D6B5D19E195C6083005BF99F /* pipo-battlebg002.jpg */; };
+		D6B5D1A6195C6083005BF99F /* pipo-battlebg002a.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D6B5D19F195C6083005BF99F /* pipo-battlebg002a.jpg */; };
+		D6B5D1A7195C6083005BF99F /* pipo-battlebg002a.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D6B5D19F195C6083005BF99F /* pipo-battlebg002a.jpg */; };
 		D6C9D4ED195AEBF100FE3E4B /* board.png in Resources */ = {isa = PBXBuildFile; fileRef = D6C9D4EB195AEBF100FE3E4B /* board.png */; };
 		D6C9D4EE195AEBF100FE3E4B /* board.png in Resources */ = {isa = PBXBuildFile; fileRef = D6C9D4EB195AEBF100FE3E4B /* board.png */; };
 		D6C9D4EF195AEBF100FE3E4B /* body_set.png in Resources */ = {isa = PBXBuildFile; fileRef = D6C9D4EC195AEBF100FE3E4B /* body_set.png */; };
@@ -307,7 +323,17 @@
 		D628FC171955AD0C00D610E5 /* c-ball-ex2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "c-ball-ex2.png"; sourceTree = "<group>"; };
 		D650D3141956967800F562B0 /* TestScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestScene.cpp; path = ../Classes/TestScene.cpp; sourceTree = "<group>"; };
 		D650D3151956967800F562B0 /* TestScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestScene.h; path = ../Classes/TestScene.h; sourceTree = "<group>"; };
+		D6A96B0A195DB6B9004F1118 /* title2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title2.png; sourceTree = "<group>"; };
+		D6A96B0F195DD9B1004F1118 /* f113f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f113f.png; sourceTree = "<group>"; };
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		D6B5D18E195C1819005BF99F /* FadeoutTouchLine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FadeoutTouchLine.cpp; path = ../Classes/FadeoutTouchLine.cpp; sourceTree = "<group>"; };
+		D6B5D18F195C1819005BF99F /* FadeoutTouchLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FadeoutTouchLine.h; path = ../Classes/FadeoutTouchLine.h; sourceTree = "<group>"; };
+		D6B5D198195C5C62005BF99F /* ParaScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParaScene.cpp; path = ../Classes/ParaScene.cpp; sourceTree = "<group>"; };
+		D6B5D199195C5C62005BF99F /* ParaScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParaScene.h; path = ../Classes/ParaScene.h; sourceTree = "<group>"; };
+		D6B5D19C195C6083005BF99F /* pipo-battlebg001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pipo-battlebg001.jpg"; sourceTree = "<group>"; };
+		D6B5D19D195C6083005BF99F /* pipo-battlebg001a.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pipo-battlebg001a.jpg"; sourceTree = "<group>"; };
+		D6B5D19E195C6083005BF99F /* pipo-battlebg002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pipo-battlebg002.jpg"; sourceTree = "<group>"; };
+		D6B5D19F195C6083005BF99F /* pipo-battlebg002a.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pipo-battlebg002a.jpg"; sourceTree = "<group>"; };
 		D6C9D4EB195AEBF100FE3E4B /* board.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = board.png; sourceTree = "<group>"; };
 		D6C9D4EC195AEBF100FE3E4B /* body_set.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = body_set.png; sourceTree = "<group>"; };
 		D6C9D4FE195AFD7B00FE3E4B /* MultiDisp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MultiDisp.cpp; sourceTree = "<group>"; };
@@ -389,6 +415,8 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D6B5D18E195C1819005BF99F /* FadeoutTouchLine.cpp */,
+				D6B5D18F195C1819005BF99F /* FadeoutTouchLine.h */,
 				D6C9D502195B00CB00FE3E4B /* gadget */,
 				D6C9D4F8195AF75C00FE3E4B /* macros */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
@@ -401,6 +429,8 @@
 				D6CEFFAC195966D800746C22 /* TestScene2.h */,
 				D6C9D50B195B248A00FE3E4B /* ModalLayer.cpp */,
 				D6C9D50C195B248A00FE3E4B /* ModalLayer.h */,
+				D6B5D198195C5C62005BF99F /* ParaScene.cpp */,
+				D6B5D199195C5C62005BF99F /* ParaScene.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -516,6 +546,12 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D6A96B0F195DD9B1004F1118 /* f113f.png */,
+				D6A96B0A195DB6B9004F1118 /* title2.png */,
+				D6B5D19C195C6083005BF99F /* pipo-battlebg001.jpg */,
+				D6B5D19D195C6083005BF99F /* pipo-battlebg001a.jpg */,
+				D6B5D19E195C6083005BF99F /* pipo-battlebg002.jpg */,
+				D6B5D19F195C6083005BF99F /* pipo-battlebg002a.jpg */,
 				D6C9D4EB195AEBF100FE3E4B /* board.png */,
 				D6C9D4EC195AEBF100FE3E4B /* body_set.png */,
 				D6DE777A19586B8D008F9AFF /* f113.png */,
@@ -718,6 +754,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6B5D1A2195C6083005BF99F /* pipo-battlebg001a.jpg in Resources */,
 				D628FC061955597A00D610E5 /* surf_board2.png in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
@@ -731,14 +768,19 @@
 				D628FC041955597A00D610E5 /* Light_mini_On.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				D6C9D4EF195AEBF100FE3E4B /* body_set.png in Resources */,
+				D6B5D1A0195C6083005BF99F /* pipo-battlebg001.jpg in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
+				D6A96B10195DD9B1004F1118 /* f113f.png in Resources */,
+				D6B5D1A6195C6083005BF99F /* pipo-battlebg002a.jpg in Resources */,
+				D6A96B0B195DB6B9004F1118 /* title2.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				D628FC001955597A00D610E5 /* float_ring.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
 				D628FC181955AD0C00D610E5 /* c-ball-ex2.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
+				D6B5D1A4195C6083005BF99F /* pipo-battlebg002.jpg in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				D6C9D4ED195AEBF100FE3E4B /* board.png in Resources */,
@@ -757,6 +799,7 @@
 			files = (
 				D6C9D4EE195AEBF100FE3E4B /* board.png in Resources */,
 				D628FC191955AD0C00D610E5 /* c-ball-ex2.png in Resources */,
+				D6A96B11195DD9B1004F1118 /* f113f.png in Resources */,
 				D628FC011955597A00D610E5 /* float_ring.png in Resources */,
 				D628FC141955A5F500D610E5 /* float_ring2.png in Resources */,
 				D628FC051955597A00D610E5 /* Light_mini_On.png in Resources */,
@@ -764,12 +807,17 @@
 				D6DE777F19586B8D008F9AFF /* f115.png in Resources */,
 				5087E75317EB910900C73F5D /* CloseNormal.png in Resources */,
 				D628FC071955597A00D610E5 /* surf_board2.png in Resources */,
+				D6B5D1A7195C6083005BF99F /* pipo-battlebg002a.jpg in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				D628FC031955597A00D610E5 /* Light_mini_Off.png in Resources */,
 				5087E75417EB910900C73F5D /* CloseSelected.png in Resources */,
+				D6A96B0C195DB6B9004F1118 /* title2.png in Resources */,
 				D6C9D4F0195AEBF100FE3E4B /* body_set.png in Resources */,
+				D6B5D1A3195C6083005BF99F /* pipo-battlebg001a.jpg in Resources */,
 				5087E75517EB910900C73F5D /* HelloWorld.png in Resources */,
+				D6B5D1A1195C6083005BF99F /* pipo-battlebg001.jpg in Resources */,
 				D6DE777D19586B8D008F9AFF /* f113.png in Resources */,
+				D6B5D1A5195C6083005BF99F /* pipo-battlebg002.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,10 +832,12 @@
 				D6C9D50D195B248A00FE3E4B /* ModalLayer.cpp in Sources */,
 				D6C9D505195B00FF00FE3E4B /* TapSprite.cpp in Sources */,
 				D6C9D500195AFD7B00FE3E4B /* MultiDisp.cpp in Sources */,
+				D6B5D19A195C5C62005BF99F /* ParaScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				D6CEFFAD195966D800746C22 /* TestScene2.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
+				D6B5D190195C1819005BF99F /* FadeoutTouchLine.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
 			);
@@ -801,6 +851,8 @@
 				D6C9D50E195B248A00FE3E4B /* ModalLayer.cpp in Sources */,
 				5087E75717EB910900C73F5D /* AppDelegate.cpp in Sources */,
 				D6C9D506195B00FF00FE3E4B /* TapSprite.cpp in Sources */,
+				D6B5D19B195C5C62005BF99F /* ParaScene.cpp in Sources */,
+				D6B5D191195C1819005BF99F /* FadeoutTouchLine.cpp in Sources */,
 				5087E75817EB910900C73F5D /* HelloWorldScene.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				D6CEFFAE195966D800746C22 /* TestScene2.cpp in Sources */,

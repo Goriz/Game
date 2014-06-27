@@ -1,5 +1,6 @@
 #include "HelloWorldScene.h"
 #include "TestScene2.h"
+#include "ParaScene.h"
 
 USING_NS_CC;
 
@@ -48,7 +49,12 @@ bool HelloWorld::init()
     
     //*nomal item
     MenuItemImage* closeItem2 =MenuItemImage::create("surf_board2.png", "surf_board4.png",
-                                                     CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+                                                     [](Ref* sender){
+                                                         Scene* scene = ParaScene::createScene();
+                                                         if(scene){
+                                                             Director::getInstance()->replaceScene(scene);
+                                                         }
+                                                     });
     
     //add destination
     closeItem2->setPosition(Vec2(origin.x+closeItem2->getContentSize().width/2,

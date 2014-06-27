@@ -7,6 +7,7 @@
 //
 
 #include "TestScene.h"
+#include "FadeoutTouchLine.h"
 
 USING_NS_CC; //use cocos2d namespace cocos2dのネームスペースを使うということ
 
@@ -157,6 +158,9 @@ void TestScene::menuCloseCallBack(cocos2d::Ref *pSnder)
 
 SceneTestLayer1::SceneTestLayer1()
 {
+    //visible size
+    Size size = Director::getInstance()->getVisibleSize();
+    
     auto item1 = MenuItemFont::create( "Test pushScene", CC_CALLBACK_1(SceneTestLayer1::onPushScene, this));
     auto item2 = MenuItemFont::create( "Test pushScene w/transition", CC_CALLBACK_1(SceneTestLayer1::onPushSceneTran, this));
     auto item3 = MenuItemFont::create( "Quit", CC_CALLBACK_1(SceneTestLayer1::onQuit, this));
@@ -175,7 +179,6 @@ SceneTestLayer1::SceneTestLayer1()
     sprite->runAction(repeat);
     
     //scrollview
-    Size size = Director::getInstance()->getVisibleSize();
     ScrollView* sView = ScrollView::create(size);
     sView->setContentSize(Size(1000, 1000));
     auto con = Sprite::create();
@@ -187,6 +190,27 @@ SceneTestLayer1::SceneTestLayer1()
     sView->setTag(20);
    // sView->setZoomScale(0.5); ver3.1.1 stil not work
     this->addChild(sView);
+    
+    /*
+    //画面全体にレイヤー表示
+    auto allLayer = Sprite::create("f115.png");
+    allLayer->setContentSize(size);
+    allLayer->setPosition(Vec2(size.width/2, size.height/2));
+     */
+    
+    EventListenerTouchOneByOne* listener = EventListenerTouchOneByOne::create();
+    
+    listener->onTouchBegan = [this](Touch *touch, Event *event){
+        FadeOutTouchLine::onTouchBegan(this, touch, event);
+        return true;
+    };
+    listener->onTouchMoved = [this](Touch *touch, Event *event){
+        FadeOutTouchLine::onTouchMoved(this, touch, event);
+    };
+    
+    Director::getInstance()->getEventDispatcher()
+      ->addEventListenerWithFixedPriority(listener, -100);
+    
     
     schedule( schedule_selector(SceneTestLayer1::testDealloc),3.0f);
 }

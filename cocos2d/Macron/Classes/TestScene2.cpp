@@ -110,7 +110,6 @@ bool TestScene2::init()
         //bt->setTitleLabel(label);
         this->addChild(bt);
     }
-    
     return true;
 }
 

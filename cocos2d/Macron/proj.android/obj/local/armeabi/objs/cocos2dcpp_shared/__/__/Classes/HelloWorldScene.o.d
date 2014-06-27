@@ -342,7 +342,8 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/HelloWorldScene.o: \
  /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/physics-nodes/CCPhysicsDebugNode.h \
  /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/cocos/./2d/CCDrawNode.h \
  /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/physics-nodes/CCPhysicsSprite.h \
- /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/assets-manager/AssetsManager.h
+ /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/assets-manager/AssetsManager.h \
+ jni/../../Classes/ParaScene.h
 
 jni/../../Classes/HelloWorldScene.h:
 
@@ -1029,3 +1030,5 @@ jni/../../Classes/TestScene2.h:
 /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/physics-nodes/CCPhysicsSprite.h:
 
 /Users/kodaitomoto/Game/cocos2d/Macron/proj.android/../cocos2d/extensions/../extensions/assets-manager/AssetsManager.h:
+
+jni/../../Classes/ParaScene.h:
