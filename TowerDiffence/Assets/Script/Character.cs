@@ -92,6 +92,7 @@ public class Character : MonoBehaviour {
 	void Attack()
 	{
 		if (collider != null) {
+			audio.Play();
 			collider.gameObject.SendMessage ("ApplyDamage", attack);
 		}
 	}

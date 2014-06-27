@@ -103,7 +103,7 @@ public class Enemy : MonoBehaviour {
 	{
 		if (collider != null) 
 		{
-			print ("attack");
+			audio.Play();
 			collider.gameObject.SendMessage ("ApplyDamage", attack);
 		}
 	}
