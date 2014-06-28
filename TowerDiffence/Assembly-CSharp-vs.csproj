@@ -46,11 +46,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\BackGround.cs" />
      <Compile Include="Assets\Script\Character.cs" />
      <Compile Include="Assets\Script\Emitter.cs" />
      <Compile Include="Assets\Script\Enemy.cs" />
      <Compile Include="Assets\Script\Gage.cs" />
+     <Compile Include="Assets\Script\GameOver.cs" />
      <Compile Include="Assets\Script\Manager.cs" />
      <Compile Include="Assets\Script\Menu.cs" />
      <Compile Include="Assets\Script\MenuEnemy.cs" />

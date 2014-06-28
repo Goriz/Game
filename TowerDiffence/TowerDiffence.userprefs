@@ -4,7 +4,8 @@
     <Files>
       <File FileName="Assets/Script/Enemy.cs" Line="97" Column="1" />
       <File FileName="Assets/Script/Menu.cs" Line="19" Column="17" />
-      <File FileName="Assets/Script/Character.cs" Line="16" Column="33" />
+      <File FileName="Assets/Script/Character.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/Manager.cs" Line="13" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
