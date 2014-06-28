@@ -12,6 +12,7 @@ public class Character : MonoBehaviour {
 	private Vector2 rotation;
 	private Vector2 current_target;
 	private GameObject collider;
+	private GameObject hit = null;
 	private RaycastHit2D hitObject;
 
 	public float speed = 5f;
@@ -32,22 +33,23 @@ public class Character : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position = Vector2.MoveTowards(transform.position, director, speed * Time.deltaTime);
-		
+
+			transform.position = Vector2.MoveTowards (transform.position, director, speed * Time.deltaTime);
+
+
 		if (Input.GetMouseButtonDown(0)) {
-			Vector2 tapPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			Collider2D collition2d = Physics2D.OverlapPoint(tapPoint);
+			director = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		/*	Collider2D collition2d = Physics2D.OverlapPoint(director);
 			if (collition2d) {
-				hitObject = Physics2D.Raycast(tapPoint,-Vector2.up);
+				hitObject = Physics2D.Raycast(director,-Vector2.up);
 				if (hitObject) {
 					Debug.Log("hit object is " + hitObject.collider.gameObject.name);
-					director = hitObject.collider.gameObject.transform.position;
 				}
-			}else{
-				director = tapPoint;
-			}
+			}	*/
 		}
 
+
+		/* *************************     Animation    *************************** */
 		if (director.x != transform.position.x) {
 				animator.SetBool(doWalkId, true);
 			}else{
@@ -62,6 +64,7 @@ public class Character : MonoBehaviour {
 			Reverse();
 			L_or_R = RIGHT;
 		}
+		/* ************************************************************************ */
 
 		// ヒットポイントが0以下であれば
 		if(hp <= 0 )
@@ -77,16 +80,13 @@ public class Character : MonoBehaviour {
 
 	void OnTriggerStay2D (Collider2D c)
 	{
-		//if (hitObject.collider.gameObject != null) {
-		if (c.gameObject != null) {
-			animator.SetTrigger ("Attack");
-		}
+		collider = c.gameObject;
+		animator.SetTrigger ("Attack");
 	}
 
 	void OnTriggerEnter2D (Collider2D c)
 	{
 		director = transform.position;
-		collider = c.gameObject;
 	}
 
 	// After attack animation

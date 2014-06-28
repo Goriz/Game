@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/MenuPlayer.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Menu.cs">
     <Files>
-      <File FileName="Assets/Script/Character.cs" Line="37" Column="1" />
-      <File FileName="Assets/Script/Enemy.cs" Line="58" Column="29" />
-      <File FileName="Assets/Script/MenuPlayer.cs" Line="11" Column="40" />
+      <File FileName="Assets/Script/Enemy.cs" Line="97" Column="1" />
+      <File FileName="Assets/Script/Menu.cs" Line="19" Column="17" />
+      <File FileName="Assets/Script/Character.cs" Line="16" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
