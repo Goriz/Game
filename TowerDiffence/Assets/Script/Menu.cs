@@ -18,8 +18,8 @@ public class Menu : MonoBehaviour {
 		if (Input.GetMouseButtonDown (0)) {
 			audio.Play();
 			title.SetActive (false);
+			GetComponent<Menu>().enabled = false;
 			Application.LoadLevelAdditive ("StageSelect");
-
 
 		}
 

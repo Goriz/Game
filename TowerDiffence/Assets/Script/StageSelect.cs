@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class StageSelect : MonoBehaviour {
-
+	
 	// Use this for initialization
 	void Start () {
 
