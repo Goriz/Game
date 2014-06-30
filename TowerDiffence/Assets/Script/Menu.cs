@@ -4,11 +4,11 @@ using System.Collections;
 public class Menu : MonoBehaviour {
 	public GameObject chase;
 	public GameObject chased;
-
+	private GameObject title;
 
 	// Use this for initialization
 	void Start () {
-		
+		 title = GameObject.Find ("Title");
 	}
 
 
@@ -17,7 +17,10 @@ public class Menu : MonoBehaviour {
 	void Update () {
 		if (Input.GetMouseButtonDown (0)) {
 			audio.Play();
-			Application.LoadLevel ("TowerDiffence");
+			title.SetActive (false);
+			Application.LoadLevelAdditive ("StageSelect");
+
+
 		}
 
 	}

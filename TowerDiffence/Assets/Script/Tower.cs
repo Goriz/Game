@@ -21,7 +21,8 @@ public class Tower : MonoBehaviour {
 		if(hp <= 0 )
 		{
 			Destroy (gameObject);
-			Application.LoadLevel ("GameOver");
+
+			Application.LoadLevelAdditive ("GameOver");
 		}
 
 	}
