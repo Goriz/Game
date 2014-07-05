@@ -17,8 +17,9 @@ Scene* ParaScene::createScene()
     gravity.setPoint(0, -50);
     scene->getPhysicsWorld()->setGravity(gravity);
     scene->getPhysicsWorld()->setSpeed(6.0f);
+    scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
     
-    Layer* layer = ParaScene::create();
+    auto layer = ParaScene::create();
     scene->addChild(layer);
     return scene;
 }
@@ -66,6 +67,38 @@ bool ParaScene::init()
     back->runAction(rp);
     this->addChild(back,0);
     
+    auto touchListener = EventListenerTouchOneByOne::create();
+    touchListener->onTouchBegan = CC_CALLBACK_2(ParaScene::onTouchBegan, this);
+    touchListener->onTouchMoved = CC_CALLBACK_2(ParaScene::onTouchMoved, this);
+    touchListener->onTouchEnded = CC_CALLBACK_2(ParaScene::onTouchEnded, this);
+    Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, this);
+    
+    return true;
+}
+
+Node* ParaScene::makeBall(Vec2 point, float radius, PhysicsMaterial material)
+{
+    Node* ball = Node::create();
+    ball->setContentSize(Size(50, 50));
+    material.density = 0.5f;
+    material.friction = 0.5f;
+    material.restitution = 0.5f;
+    auto body = PhysicsBody::createCircle(radius, material);
+    ball->setPhysicsBody(body);
+    ball->setPosition(Vec2(point.x, point.y));
+    
+    return ball;
+}
+
+void ParaScene::onEnter(){
+    Layer::onEnter();
+    
+    //setPhyWorld(dynamic_cast<Scene*>(this->getParent())->getPhysicsWorld());
+    setScene(dynamic_cast<Scene*>(this->getParent()));
+    
+    Size vSize = Director::getInstance()->getVisibleSize();
+    Vec2 origin = Director::getInstance()->getVisibleOrigin();
+    
     //time progress bar
     Sprite* tSp = Sprite::create("Light_mini_On.png");
     ProgressTimer* pTimer = ProgressTimer::create(tSp);
@@ -74,11 +107,12 @@ bool ParaScene::init()
     pTimer->setPercentage(0.0f);
     pTimer->setTag(1);
     pTimer->setPhysicsBody(PhysicsBody::createCircle(tSp->getContentSize().width/2-5));
+    pTimer->getPhysicsBody()->setMass(0.1f);
     this->addChild(pTimer,5);
     
     this->scheduleUpdate();
     
-    
+    /*
     auto node = Node::create();
     node->setPhysicsBody(PhysicsBody::createEdgeSegment(Vec2(0, 50), Vec2(800, 50)));
     this->addChild(node,50);
@@ -91,41 +125,90 @@ bool ParaScene::init()
     auto node3 = Node::create();
     node3->setPhysicsBody(PhysicsBody::createEdgeSegment(Vec2(0, 480), Vec2(800,480)));
     this->addChild(node3,50);
+     */
     
     auto player = Sprite::create("title2.png");
     auto pb = PhysicsBody::createBox(Size(player->getContentSize()));
     pb->setEnable(true);
     pb->setRotationEnable(true);
     pb->setTag(55);
+    pb->setMass(0.1f);
     player->setPosition(Vec2(220, 400));
     player->setPhysicsBody(pb);
     
     this->addChild(player,50,1);
     
+    
+    
     auto fem = Scale9Sprite::create("f113f.png");
-    fem->setScale(0.4f);
-    fem->setPhysicsBody(PhysicsBody::createBox(Size(fem->getContentSize().width*0.35f,
-                                                    fem->getContentSize().height*0.35f)));
+    fem->setScale(0.15f);
+    fem->setPhysicsBody(PhysicsBody::createBox(Size(fem->getContentSize().width*0.13f,
+                                                    fem->getContentSize().height*0.13f)));
+    fem->getPhysicsBody()->setMass(100);
+    
     fem->setPosition(Vec2(400, 200));
     fem->getPhysicsBody()->setTag(55);
+    fem->setTag(22);
     this->addChild(fem);
+
+    auto sp1 = makeBall(Vec2(230, 80), 10,PHYSICSBODY_MATERIAL_DEFAULT);
+    sp1->getPhysicsBody()->setTag(55);
+    auto sp2 = makeBall(Vec2(260, 80), 10,PHYSICSBODY_MATERIAL_DEFAULT);
+    sp2->getPhysicsBody()->setTag(55);
     
+    PhysicsJointPin* joint = PhysicsJointPin::construct(sp1->getPhysicsBody(), sp2->getPhysicsBody(), Vec2(230, 80));
+    _scene->getPhysicsWorld()->addJoint(joint);
     
-    auto touchListener = EventListenerTouchOneByOne::create();
-    touchListener->onTouchBegan = CC_CALLBACK_2(ParaScene::onTouchBegan, this);
-    touchListener->onTouchMoved = CC_CALLBACK_2(ParaScene::onTouchMoved, this);
-    touchListener->onTouchEnded = CC_CALLBACK_2(ParaScene::onTouchEnded, this);
-    Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, this);
+    this->addChild(sp1);
+    this->addChild(sp2);
+
+ 
+    //bridge
+    Node* prb = nullptr;
+    for(int i = 0;i < 50;i++){
+        Vec2 offset(i*20.5f,160);
+        auto br = Node::create();
+        br->setContentSize(Size(20, 7));
+        br->setPosition(offset+Vec2(10.5f, 0));
+        
+        PhysicsMaterial cm;
+        cm.density = 1;
+        cm.friction = 0.5f;
+        cm.restitution = 1;
+        
+        auto bb = PhysicsBody::createBox(Size(20, 7),cm);
+        bb->setMass(2);
+        //bb->setLinearDamping(1);
+        bb->setAngularVelocityLimit(0.5f);
+        //bb->setAngularDamping(0.1f);
+        bb->setVelocityLimit(0.5f);
+        br->setPhysicsBody(bb);
+
+        if(i == 0 || i == 50-1){
+            bb->setDynamic(false);
+        }
+        this->addChild(br);
+        
+        if(prb){
+            PhysicsJointDistance* joint = PhysicsJointDistance::construct(prb->getPhysicsBody(), br->getPhysicsBody(), Vec2(10, 0),Vec2(-10,0));
+            joint->setDistance(0);
+            
+            PhysicsJointPin* joint2 = PhysicsJointPin::construct(prb->getPhysicsBody(), br->getPhysicsBody(), offset);
+            
+            _scene->getPhysicsWorld()->addJoint(joint2);
+        }
+        prb = br;
+    }
     
-    return true;
+    cam = new ActionCamera;
+    cam->startWithTarget(this);
 }
+
+
 
 
 bool ParaScene::onTouchBegan(Touch* touch, Event* event)
 {
-    if(!_scene) {
-        _scene = dynamic_cast<Scene*>(this->getParent());
-    }
     
     auto location = touch->getLocation();
     auto arr = _scene->getPhysicsWorld()->getShapes(location);
@@ -142,8 +225,7 @@ bool ParaScene::onTouchBegan(Touch* touch, Event* event)
     
     CCLOG("tx:%f ty:%f",location.x,location.y);
     
-    Sprite* b = (Sprite*)this->getChildByTag(1);
-    if(b) CCLOG("x:%f y:%f",b->getPosition().x,b->getPosition().y);
+    if(body) CCLOG("x:%f y:%f",body->getPosition().x,body->getPosition().y);
         
     if (body != nullptr)
     {
@@ -171,6 +253,7 @@ void ParaScene::onTouchMoved(Touch* touch, Event* event)
     {
         it->second->setPosition(touch->getLocation());
     }
+    //this->setPosition(ap->getPosition());
 }
 
 void ParaScene::onTouchEnded(Touch* touch, Event* event)
@@ -193,9 +276,12 @@ void ParaScene::update(float deltaTime)
     per += deltaTime*10;
     if(per > 100){
         per = 100;
-        this->unscheduleUpdate();
+        //this->unscheduleUpdate();
     }
     pTimer->setPercentage(per);
+    
+    auto ap = (Sprite*)this->getChildByTag(22);
+    cam->setEye(ap->getPosition().x, ap->getPosition().y, 0);
 }
 
 

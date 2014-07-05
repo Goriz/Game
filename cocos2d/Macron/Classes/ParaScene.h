@@ -28,9 +28,14 @@ public:
     
     virtual bool init();
     
+    void onEnter();
+    
     void menuCloseCallBack(Ref* pSnder);
     
     void update(float deltaTime);
+    
+    void setScene(Scene* scene){_scene = scene;};
+    void setPhyWorld(PhysicsWorld* world){m_world = world;}
     
     
     bool onTouchBegan(Touch* touch, Event* event);
@@ -40,9 +45,13 @@ public:
     // implement the "static create()" method manually
     CREATE_FUNC(ParaScene);
 protected:
+    Node* makeBall(Vec2 point, float radius, PhysicsMaterial material);
+
     std::unordered_map<int, Node*> _mouses;
     Scene* _scene;
+    
+private:
+    PhysicsWorld* m_world;
+    ActionCamera *cam;
 };
-
-
 #endif /* defined(__Macron__ParaScene__) */
