@@ -6,8 +6,8 @@ public class Tower : MonoBehaviour {
 	public float hp = 10;
 	public float sumdamage = 0;
 	private float max_hp;
-	float parcent = 1;
-	GameObject gage = null;
+	private float parcent = 1;
+	private GameObject gage = null;
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +20,6 @@ public class Tower : MonoBehaviour {
 		// ヒットポイントが0以下であれば
 		if(hp <= 0 )
 		{
-			Destroy (gameObject);
 
 			Application.LoadLevelAdditive ("GameOver");
 		}

@@ -14,11 +14,13 @@ public class Character : MonoBehaviour {
 	private GameObject collider;
 	private GameObject hit = null;
 	private RaycastHit2D hitObject;
+	private GameObject gage = null;
+	private float parcent = 1;
 
 	public float speed = 5f;
-	public int attack = 5;
-	public int hp = 10;
-	int sumdamage = 0;
+	public float attack = 5;
+	public float hp = 10;
+	private float max_hp;
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +31,10 @@ public class Character : MonoBehaviour {
 		doWalkId = Animator.StringToHash ("DoWalk");
 
 		current_target = transform.position;
+
+		gage = GameObject.Find ("gagePlayer");
+		max_hp = hp;
+
 	}
 	
 	// Update is called once per frame
@@ -99,10 +105,12 @@ public class Character : MonoBehaviour {
 	}
 
 
-	void ApplyDamage(int damage)
+	void ApplyDamage(float damage)
 	{
 		hp = hp - damage;
-		sumdamage = sumdamage + damage;
+		parcent = hp / max_hp;
+
+		gage.SendMessage("gageControl2", parcent);
 	}
 		
 }
