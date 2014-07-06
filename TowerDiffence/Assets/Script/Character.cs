@@ -20,7 +20,7 @@ public class Character : MonoBehaviour {
 	public float speed = 5f;
 	public float attack = 5;
 	public float hp = 10;
-	private float max_hp;
+	public float max_hp;
 
 	// Use this for initialization
 	void Start () {
@@ -93,6 +93,17 @@ public class Character : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D c)
 	{
 		director = transform.position;
+
+		string layerName = LayerMask.LayerToName (c.gameObject.layer);
+
+		print (c.gameObject.name);
+
+		if (layerName == "CureItem") {
+			print ("Get CureItem!");
+			hp = max_hp;
+			gage.SendMessage("gageControl2", 1);
+		}
+
 	}
 
 	// After attack animation

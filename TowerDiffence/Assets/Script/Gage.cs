@@ -16,8 +16,6 @@ public class Gage : MonoBehaviour {
 
 	public void gageControl(float parcent){
 
-		print (transform.localScale.x);
-
 		transform.localScale = new Vector2 (scalex * parcent  , transform.localScale.y);
 
 	}

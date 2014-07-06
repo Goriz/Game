@@ -22,8 +22,6 @@ public class GagePlayer : MonoBehaviour {
 
 	public void gageControl2(float parcent){
 		
-		print (transform.localScale.x);
-		
 		transform.localScale = new Vector2 (scalex * parcent  , transform.localScale.y);
 		
 	}
