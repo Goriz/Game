@@ -1,10 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/NGUI/Scripts/Editor/UIWidgetInspector.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Menu/MenuRemover.cs">
     <Files>
-      <File FileName="Assets/NGUI/Scripts/UI/UITiledSprite.cs" Line="17" Column="1" />
-      <File FileName="Assets/NGUI/Scripts/Editor/UIFontInspector.cs" Line="42" Column="1" />
-      <File FileName="Assets/NGUI/Scripts/Editor/UIWidgetInspector.cs" Line="984" Column="1" />
+      <File FileName="Assets/Import/Sample Assets/2D/Scripts/PlatformerCharacter2D.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Menu/MenuRemover.cs" Line="7" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -276,6 +276,9 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITiledSprite.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
+     <Compile Include="Assets\Scripts\Menu\MenuCharaMove.cs" />
+     <Compile Include="Assets\Scripts\Menu\MenuEmitter.cs" />
+     <Compile Include="Assets\Scripts\Menu\MenuRemover.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\Import\Sample Assets\Effects\Toon Shading\Shaders\Toony-Basic.shader" />
      <None Include="Assets\NGUI\Examples\Models\Orc\Orc Skin.shader" />
