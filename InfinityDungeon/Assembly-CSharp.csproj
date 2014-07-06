@@ -276,6 +276,9 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITiledSprite.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
+     <Compile Include="Assets\Scripts\All\FadeManager.cs" />
+     <Compile Include="Assets\Scripts\All\SigletonMonoBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Menu\GameStart.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuCharaMove.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuEmitter.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuRemover.cs" />
