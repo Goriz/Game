@@ -279,7 +279,8 @@
      <Compile Include="Assets\Scripts\All\FadeManager.cs" />
      <Compile Include="Assets\Scripts\All\ParcticalSystem1.cs" />
      <Compile Include="Assets\Scripts\All\SigletonMonoBehaviour.cs" />
-     <Compile Include="Assets\Scripts\Main\TransitionMainStatus.cs" />
+     <Compile Include="Assets\Scripts\Main\Status\StatusMove.cs" />
+     <Compile Include="Assets\Scripts\Main\Status\TransitionMainStatus.cs" />
      <Compile Include="Assets\Scripts\Menu\GameStart.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuCharaMove.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuEmitter.cs" />
