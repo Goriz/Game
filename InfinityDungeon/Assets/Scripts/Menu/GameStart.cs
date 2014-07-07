@@ -15,7 +15,7 @@ public class GameStart : MonoBehaviour {
 	void OnClick(){
 		if(!isClick){
 			isClick = true;
-			manager.LoadLevel("MainGame",1.0f);
+			manager.LoadLevel("Prepare",1.0f);
 		}
 	}
 }
