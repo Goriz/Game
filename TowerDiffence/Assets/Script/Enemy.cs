@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour {
 	public int hp = 10;
 	public int attack = 1;
 	public float speed = 5f;
+	public GameObject item;
 
 	public int L_or_R = 1;
 	private int LEFT = 1, RIGHT = 2;
@@ -112,6 +113,7 @@ public class Enemy : MonoBehaviour {
 	void Dead()
 	{
 		Destroy (gameObject);
+		Instantiate (item, transform.position, transform.rotation);
 	}
 
 	void ApplyDamage(int damage)

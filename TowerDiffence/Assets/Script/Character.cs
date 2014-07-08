@@ -21,6 +21,8 @@ public class Character : MonoBehaviour {
 	public float attack = 5;
 	public float hp = 10;
 	public float max_hp;
+	public GameObject particle;
+	public GameObject particle2;
 
 	// Use this for initialization
 	void Start () {
@@ -75,8 +77,8 @@ public class Character : MonoBehaviour {
 		// ヒットポイントが0以下であれば
 		if(hp <= 0 )
 		{
-			// エネミーの削除
-			Destroy (gameObject);
+			animator.SetTrigger ("Dead");
+			Application.LoadLevel ("GameOver");
 		}
 	}
 
@@ -86,8 +88,10 @@ public class Character : MonoBehaviour {
 
 	void OnTriggerStay2D (Collider2D c)
 	{
-		collider = c.gameObject;
-		animator.SetTrigger ("Attack");
+		print ("Stay");
+			collider = c.gameObject;
+			animator.SetTrigger ("Attack");
+
 	}
 
 	void OnTriggerEnter2D (Collider2D c)
@@ -98,13 +102,23 @@ public class Character : MonoBehaviour {
 
 		print (c.gameObject.name);
 
-		if (layerName == "CureItem") {
-			print ("Get CureItem!");
-			hp = max_hp;
-			gage.SendMessage("gageControl2", 1);
-		}
-
-	}
+		switch (layerName) {
+			case "CureItem":
+				print ("Get CureItem!");
+				hp = max_hp;
+				gage.SendMessage ("gageControl2", 1);
+				break;
+			case "AttackItem":
+				print ("AttackItem");
+				break;
+			case "DiffenceItem":
+				print ("DiffenceItme");
+				break;
+			default:
+				print ("default");
+				break;
+			}
+		}	
 
 	// After attack animation
 	void Attack()

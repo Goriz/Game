@@ -20,8 +20,7 @@ public class Tower : MonoBehaviour {
 		// ヒットポイントが0以下であれば
 		if(hp <= 0 )
 		{
-
-			Application.LoadLevelAdditive ("GameOver");
+			Application.LoadLevel ("GameOver");
 		}
 
 	}

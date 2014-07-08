@@ -16,5 +16,6 @@ public class AttackItem : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D c)
 	{
 		Destroy (gameObject);
+		print ("get item");
 	}
 }

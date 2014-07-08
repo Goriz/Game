@@ -17,9 +17,9 @@ public class Menu : MonoBehaviour {
 	void Update () {
 		if (Input.GetMouseButtonDown (0)) {
 			audio.Play();
-			title.SetActive (false);
-			GetComponent<Menu>().enabled = false;
-			Application.LoadLevelAdditive ("StageSelect");
+		//	title.SetActive (false);
+		//	GetComponent<Menu>().enabled = false;
+			Application.LoadLevel ("TowerDiffence");
 
 		}
 
