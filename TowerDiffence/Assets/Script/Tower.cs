@@ -19,7 +19,9 @@ public class Tower : MonoBehaviour {
 	void Update () {
 		// ヒットポイントが0以下であれば
 		if(hp <= 0 )
-		{
+		{	
+			FindObjectOfType<Score>().Save();
+
 			Application.LoadLevel ("GameOver");
 		}
 

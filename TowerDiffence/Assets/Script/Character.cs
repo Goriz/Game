@@ -78,6 +78,9 @@ public class Character : MonoBehaviour {
 		if(hp <= 0 )
 		{
 			animator.SetTrigger ("Dead");
+
+			FindObjectOfType<Score>().Save();
+
 			Application.LoadLevel ("GameOver");
 		}
 	}

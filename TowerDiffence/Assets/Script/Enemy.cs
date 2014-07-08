@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour {
 	public int hp = 10;
 	public int attack = 1;
 	public float speed = 5f;
+	public int point = 100;
 	public GameObject item;
 
 	public int L_or_R = 1;
@@ -113,6 +114,8 @@ public class Enemy : MonoBehaviour {
 	void Dead()
 	{
 		Destroy (gameObject);
+		FindObjectOfType<Score>().AddPoint(point);
+
 		Instantiate (item, transform.position, transform.rotation);
 	}
 

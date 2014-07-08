@@ -60,6 +60,7 @@
      <Compile Include="Assets\Script\Menu.cs" />
      <Compile Include="Assets\Script\MenuEnemy.cs" />
      <Compile Include="Assets\Script\MenuPlayer.cs" />
+     <Compile Include="Assets\Script\Score.cs" />
      <Compile Include="Assets\Script\StageSelect.cs" />
      <Compile Include="Assets\Script\Tower.cs" />
   </ItemGroup>
