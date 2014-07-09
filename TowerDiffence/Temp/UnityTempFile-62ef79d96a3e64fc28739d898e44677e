@@ -37,6 +37,7 @@
 -define:UNITY_EDITOR
 -define:UNITY_EDITOR_OSX
 'Assets/Script/AttackItem.cs'
+'Assets/Script/Button.cs'
 'Assets/Script/Character.cs'
 'Assets/Script/CureItem.cs'
 'Assets/Script/DiffenceItem.cs'

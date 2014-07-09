@@ -116,7 +116,11 @@ public class Enemy : MonoBehaviour {
 		Destroy (gameObject);
 		FindObjectOfType<Score>().AddPoint(point);
 
-		Instantiate (item, transform.position, transform.rotation);
+		int rand = Random.Range (0, 5);
+
+		if (rand == 1) {
+						Instantiate (item, transform.position, transform.rotation);
+				}
 	}
 
 	void ApplyDamage(int damage)

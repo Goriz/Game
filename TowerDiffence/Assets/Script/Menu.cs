@@ -19,7 +19,7 @@ public class Menu : MonoBehaviour {
 			audio.Play();
 		//	title.SetActive (false);
 		//	GetComponent<Menu>().enabled = false;
-			Application.LoadLevel ("TowerDiffence");
+		//	Application.LoadLevel ("TowerDiffence");
 
 		}
 
