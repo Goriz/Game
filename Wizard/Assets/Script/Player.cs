@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 	public GameObject fire;
+	private GameObject command;
 	private Vector2 tappoint;
 	private Animator animator;
 	private int ChargeId;
@@ -14,6 +15,8 @@ public class Player : MonoBehaviour {
 		animator = GetComponent<Animator> ();
 
 		ChargeId = Animator.StringToHash ("Charge");
+
+		command = GameObject.Find("Command");
 	}
 	
 	// Update is called once per frame
@@ -24,32 +27,39 @@ public class Player : MonoBehaviour {
 
 			charge = false;
 
-			Collider2D collition2d = Physics2D.OverlapPoint(tappoint);
-			if (collition2d) {
-				RaycastHit2D hitObject = Physics2D.Raycast(tappoint,-Vector2.up);
-				if (hitObject) {
-					Debug.Log("hit object is " + hitObject.collider.gameObject.name);
-					if(hitObject.collider.gameObject.name == "Player"){
-						charge = true;
-					}
-				}
-			}
+			Raycast();
 
 			if(charge == false && tappoint.x > -4){
 			animator.SetTrigger ("Attack");
 			Instantiate (fire, transform.position, transform.rotation);
 			}
-				}
+		}
 
 		if (charge == true) {
 			animator.SetBool(ChargeId, true);
+			command.SetActive(true);
 		}else{
 			animator.SetBool(ChargeId, false);
+			command.SetActive(false);
 		}
 	}
 
 
 	public Vector2 getMousePoint(){
 		return tappoint;
+	}
+
+
+	void Raycast(){
+		Collider2D collition2d = Physics2D.OverlapPoint(tappoint);
+		if (collition2d) {
+			RaycastHit2D hitObject = Physics2D.Raycast(tappoint,-Vector2.up);
+			if (hitObject) {
+				Debug.Log("hit object is " + hitObject.collider.gameObject.name);
+				if(hitObject.collider.gameObject.name == "Player"){
+					charge = true;
+				}
+			}
+		}
 	}
 }
