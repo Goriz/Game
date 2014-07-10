@@ -22,16 +22,16 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+
 		if (Input.GetMouseButtonDown (0)) {
 			tappoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-			charge = false;
-
 			Raycast();
 
-			if(charge == false && tappoint.x > -4){
+			if(charge == false && tappoint.x > -4 && GameObject.Find("MPStar1(Clone)") != null){
 			animator.SetTrigger ("Attack");
 			Instantiate (fire, transform.position, transform.rotation);
+				Destroy(GameObject.Find("MPStar1(Clone)"));
 			}
 		}
 
@@ -57,7 +57,9 @@ public class Player : MonoBehaviour {
 			if (hitObject) {
 				Debug.Log("hit object is " + hitObject.collider.gameObject.name);
 				if(hitObject.collider.gameObject.name == "Player"){
+					if(charge == false){
 					charge = true;
+					}else charge = false;
 				}
 			}
 		}
