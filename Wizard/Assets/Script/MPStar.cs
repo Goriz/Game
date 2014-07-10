@@ -12,10 +12,6 @@ public class MPStar : MonoBehaviour {
 
 	void Update(){
 		transform.position = new Vector2(-4.5f, -2.7f + 0.4f * starNumber);
-
-		if (Input.GetMouseButtonDown (0)) {
-			CreateStar();
-		}
 	}
 	
 	void CreateStar(){
