@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 	public GameObject fire;
-	public GameObject[] mpstars;
 	private Vector2 tappoint;
 	private Animator animator;
 
@@ -20,7 +19,7 @@ public class Player : MonoBehaviour {
 
 			tappoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-			if(GameObject.Find("MPStar10") != null){
+		/*	if(GameObject.Find("MPStar10") != null){
 				Destroy(GameObject.Find("MPStar10"));
 			}else if(GameObject.Find("MPStar9") != null){
 				Destroy(GameObject.Find("MPStar9"));
@@ -40,7 +39,7 @@ public class Player : MonoBehaviour {
 				Destroy(GameObject.Find("MPStar2"));
 			}else if(GameObject.Find("MPStar1") != null){
 				Destroy(GameObject.Find("MPStar1"));
-			}
+			}	*/
 
 			animator.SetTrigger ("Attack");
 			Instantiate (fire, transform.position, transform.rotation);
