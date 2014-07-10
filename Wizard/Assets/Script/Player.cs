@@ -5,48 +5,47 @@ public class Player : MonoBehaviour {
 	public GameObject fire;
 	private Vector2 tappoint;
 	private Animator animator;
+	private int ChargeId;
+	private bool charge = false;
 
 
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator> ();
+
+		ChargeId = Animator.StringToHash ("Charge");
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 		if (Input.GetMouseButtonDown (0)) {
-
 			tappoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-		/*	if(GameObject.Find("MPStar10") != null){
-				Destroy(GameObject.Find("MPStar10"));
-			}else if(GameObject.Find("MPStar9") != null){
-				Destroy(GameObject.Find("MPStar9"));
-			}else if(GameObject.Find("MPStar8") != null){
-				Destroy(GameObject.Find("MPStar8"));
-			}else if(GameObject.Find("MPStar7") != null){
-				Destroy(GameObject.Find("MPStar7"));
-			}else if(GameObject.Find("MPStar6") != null){
-				Destroy(GameObject.Find("MPStar6"));
-			}else if(GameObject.Find("MPStar5") != null){
-				Destroy(GameObject.Find("MPStar5"));
-			}else if(GameObject.Find("MPStar4") != null){
-				Destroy(GameObject.Find("MPStar4"));
-			}else if(GameObject.Find("MPStar3") != null){
-				Destroy(GameObject.Find("MPStar3"));
-			}else if(GameObject.Find("MPStar2") != null){
-				Destroy(GameObject.Find("MPStar2"));
-			}else if(GameObject.Find("MPStar1") != null){
-				Destroy(GameObject.Find("MPStar1"));
-			}	*/
+			charge = false;
 
+			Collider2D collition2d = Physics2D.OverlapPoint(tappoint);
+			if (collition2d) {
+				RaycastHit2D hitObject = Physics2D.Raycast(tappoint,-Vector2.up);
+				if (hitObject) {
+					Debug.Log("hit object is " + hitObject.collider.gameObject.name);
+					if(hitObject.collider.gameObject.name == "Player"){
+						charge = true;
+					}
+				}
+			}
+
+			if(charge == false && tappoint.x > -4){
 			animator.SetTrigger ("Attack");
 			Instantiate (fire, transform.position, transform.rotation);
-
+			}
 				}
 
-
+		if (charge == true) {
+			animator.SetBool(ChargeId, true);
+		}else{
+			animator.SetBool(ChargeId, false);
+		}
 	}
 
 
