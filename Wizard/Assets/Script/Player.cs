@@ -4,10 +4,12 @@ using System.Collections;
 public class Player : MonoBehaviour {
 	public GameObject fire;
 	private GameObject command;
+	private GameObject MPStarController;
 	private Vector2 tappoint;
 	private Animator animator;
 	private int ChargeId;
 	private bool charge = false;
+
 
 
 	// Use this for initialization
@@ -17,6 +19,8 @@ public class Player : MonoBehaviour {
 		ChargeId = Animator.StringToHash ("Charge");
 
 		command = GameObject.Find("Command");
+
+		MPStarController = GameObject.Find("MPStarController");
 	}
 	
 	// Update is called once per frame
@@ -28,10 +32,10 @@ public class Player : MonoBehaviour {
 
 			Raycast();
 
-			if(charge == false && tappoint.x > -4 && GameObject.Find("MPStar1(Clone)") != null){
+			if(charge == false && tappoint.x > -3.5 && GameObject.Find("MPStar1") != null){
 			animator.SetTrigger ("Attack");
 			Instantiate (fire, transform.position, transform.rotation);
-				Destroy(GameObject.Find("MPStar1(Clone)"));
+				FindObjectOfType<MPStar>().Shot();
 			}
 		}
 
