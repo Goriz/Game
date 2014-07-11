@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		director = new Vector2 (-4.5f, 0);
+		director = new Vector2 (-4f, 0);
 		animator = GetComponent<Animator> ();
 	}
 	

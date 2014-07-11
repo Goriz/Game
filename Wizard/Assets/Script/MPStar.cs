@@ -17,6 +17,12 @@ public class MPStar : MonoBehaviour {
 	private GameObject mpstar9;
 	private GameObject mpstar10;
 
+	private GameObject upButton;
+	private GameObject downButton;
+	private GameObject leftButton;
+	private GameObject rightButton;
+
+
 
 	void Start(){
 	/*	for(int i = 1 ; i <= 10 ; i++){
@@ -33,6 +39,13 @@ public class MPStar : MonoBehaviour {
 		mpstar8 = GameObject.Find("MPStar8");
 		mpstar9 = GameObject.Find("MPStar9");
 		mpstar10 = GameObject.Find("MPStar10"); 
+
+		upButton = GameObject.Find("/Command/Camera/Anchor/Panel/UpButton");
+		downButton = GameObject.Find("/Command/Camera/Anchor/Panel/DownButton");
+		leftButton = GameObject.Find("/Command/Camera/Anchor/Panel/LeftButton");
+		rightButton = GameObject.Find("/Command/Camera/Anchor/Panel/RightButton");
+
+		RandButton ();
 
 	}
 
@@ -80,6 +93,7 @@ public class MPStar : MonoBehaviour {
 		} else
 			mpstar1.SetActive (false);
 
+
 	}
 
 
@@ -88,27 +102,69 @@ public class MPStar : MonoBehaviour {
 		mp = mp - mpspeed;
 	}
 
+	void RandButton(){
+		int rand = Random.Range (1, 4);
+		
+		switch(rand){
+		case 1:
+			upButton.GetComponent<BoxCollider>().enabled = true;
+			downButton.GetComponent<BoxCollider>().enabled = false;
+			leftButton.GetComponent<BoxCollider>().enabled = false;
+			rightButton.GetComponent<BoxCollider>().enabled = false;
+			
+			break;
+		case 2:
+			downButton.GetComponent<BoxCollider>().enabled = true;
+			upButton.GetComponent<BoxCollider>().enabled = false;
+			leftButton.GetComponent<BoxCollider>().enabled = false;
+			rightButton.GetComponent<BoxCollider>().enabled = false;
+			
+			break;
+		case 3:
+			leftButton.GetComponent<BoxCollider>().enabled = true;
+			downButton.GetComponent<BoxCollider>().enabled = false;
+			upButton.GetComponent<BoxCollider>().enabled = false;
+			rightButton.GetComponent<BoxCollider>().enabled = false;
+			
+			break;
+		case 4:
+			rightButton.GetComponent<BoxCollider>().enabled = true;
+			downButton.GetComponent<BoxCollider>().enabled = false;
+			leftButton.GetComponent<BoxCollider>().enabled = false;
+			upButton.GetComponent<BoxCollider>().enabled = false;
+			
+			break;
+		default:
+			break;
+		}
+
+
+	}
 
 	void UpButtonPressed() {
 		print ("UpButton Pressed!");
 		mp++;
+		RandButton ();
 	}
 	
 	void DownButtonPressed() {
 		print ("DownButton Pressed!");
 		mp++;
+		RandButton ();
 	}
 	
 	/// <summary>右ボタン押された</summary>
 	void RightButtonPressed() {
 		print ("RightButton Pressed!");
 		mp++;
+		RandButton ();
 	}
 	
 	/// <summary>左ボタン押された</summary>
 	void LeftButtonPressed() {
 		print ("LeftButton Pressed!");
 		mp++;
+		RandButton ();
 	} 
 
 }
