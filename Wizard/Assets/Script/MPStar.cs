@@ -103,35 +103,35 @@ public class MPStar : MonoBehaviour {
 	}
 
 	void RandButton(){
-		int rand = Random.Range (1, 4);
+		int rand = Random.Range (1, 5);
 		
 		switch(rand){
 		case 1:
-			upButton.GetComponent<BoxCollider>().enabled = true;
-			downButton.GetComponent<BoxCollider>().enabled = false;
-			leftButton.GetComponent<BoxCollider>().enabled = false;
-			rightButton.GetComponent<BoxCollider>().enabled = false;
+			upButton.GetComponent<UIButton>().isEnabled = true;
+			downButton.GetComponent<UIButton>().isEnabled = false;
+			leftButton.GetComponent<UIButton>().isEnabled = false;
+			rightButton.GetComponent<UIButton>().isEnabled = false;
 			
 			break;
 		case 2:
-			downButton.GetComponent<BoxCollider>().enabled = true;
-			upButton.GetComponent<BoxCollider>().enabled = false;
-			leftButton.GetComponent<BoxCollider>().enabled = false;
-			rightButton.GetComponent<BoxCollider>().enabled = false;
+			downButton.GetComponent<UIButton>().isEnabled = true;
+			upButton.GetComponent<UIButton>().isEnabled = false;
+			leftButton.GetComponent<UIButton>().isEnabled = false;
+			rightButton.GetComponent<UIButton>().isEnabled = false;
 			
 			break;
 		case 3:
-			leftButton.GetComponent<BoxCollider>().enabled = true;
-			downButton.GetComponent<BoxCollider>().enabled = false;
-			upButton.GetComponent<BoxCollider>().enabled = false;
-			rightButton.GetComponent<BoxCollider>().enabled = false;
+			leftButton.GetComponent<UIButton>().isEnabled = true;
+			downButton.GetComponent<UIButton>().isEnabled = false;
+			upButton.GetComponent<UIButton>().isEnabled = false;
+			rightButton.GetComponent<UIButton>().isEnabled = false;
 			
 			break;
 		case 4:
-			rightButton.GetComponent<BoxCollider>().enabled = true;
-			downButton.GetComponent<BoxCollider>().enabled = false;
-			leftButton.GetComponent<BoxCollider>().enabled = false;
-			upButton.GetComponent<BoxCollider>().enabled = false;
+			rightButton.GetComponent<UIButton>().isEnabled = true;
+			downButton.GetComponent<UIButton>().isEnabled = false;
+			leftButton.GetComponent<UIButton>().isEnabled = false;
+			upButton.GetComponent<UIButton>().isEnabled = false;
 			
 			break;
 		default:
