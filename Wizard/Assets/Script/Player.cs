@@ -35,6 +35,7 @@ public class Player : MonoBehaviour {
 			if(charge == false && tappoint.x > -3.5 && GameObject.Find("MPStar1") != null){
 			animator.SetTrigger ("Attack");
 			Instantiate (fire, transform.position, transform.rotation);
+				audio.Play();
 				FindObjectOfType<MPStar>().Shot();
 			}
 		}
