@@ -168,6 +168,7 @@
      <Compile Include="Assets\Script\EnemyCreator.cs" />
      <Compile Include="Assets\Script\Fire.cs" />
      <Compile Include="Assets\Script\MPStar.cs" />
+     <Compile Include="Assets\Script\Menu.cs" />
      <Compile Include="Assets\Script\Player.cs" />
      <Compile Include="Assets\Script\Score.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
