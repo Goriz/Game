@@ -56,9 +56,9 @@ public class MPStar : MonoBehaviour {
 
 	void Update(){
 
-		if (mp > 30) {
-			mp = 30;
-		}
+		if (mp > mpspeed * 10) {
+			mp = mpspeed * 10;
+				}
 
 	/* **************************** MPStar Controll ***************************** */
 		if (mp >= mpspeed * 10) {
