@@ -8,7 +8,7 @@ public class Player : MonoBehaviour {
 	private Vector2 tappoint;
 	private Animator animator;
 	private int ChargeId;
-	private bool charge = false;
+	public bool charge = false;
 
 
 
@@ -54,6 +54,10 @@ public class Player : MonoBehaviour {
 		return tappoint;
 	}
 
+	public bool getCharge(){
+		return charge;
+	}
+
 
 	void Raycast(){
 		Collider2D collition2d = Physics2D.OverlapPoint(tappoint);
@@ -69,4 +73,11 @@ public class Player : MonoBehaviour {
 			}
 		}
 	}
+
+	void OnTriggerEnter2D(Collider2D c){
+		FindObjectOfType<Score>().Save();
+		Application.LoadLevel("GameOver");
+		
+	}
+
 }

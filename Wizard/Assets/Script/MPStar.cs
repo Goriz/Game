@@ -6,6 +6,7 @@ public class MPStar : MonoBehaviour {
 	public int mpspeed = 2;
 
 	private int mp = 15;
+	private int rand = 1;
 	private GameObject mpstar1;
 	private GameObject mpstar2;
 	private GameObject mpstar3;
@@ -38,10 +39,10 @@ public class MPStar : MonoBehaviour {
 		mpstar9 = GameObject.Find("MPStar9");
 		mpstar10 = GameObject.Find("MPStar10"); 
 
-		upButton = GameObject.Find("/Command/Camera/Anchor/Panel/UpButton");
-		downButton = GameObject.Find("/Command/Camera/Anchor/Panel/DownButton");
-		leftButton = GameObject.Find("/Command/Camera/Anchor/Panel/LeftButton");
-		rightButton = GameObject.Find("/Command/Camera/Anchor/Panel/RightButton");
+		upButton = GameObject.Find("/Command/Camera/Anchor/Panel/UpButton/Label");
+		downButton = GameObject.Find("/Command/Camera/Anchor/Panel/DownButton/Label");
+		leftButton = GameObject.Find("/Command/Camera/Anchor/Panel/LeftButton/Label");
+		rightButton = GameObject.Find("/Command/Camera/Anchor/Panel/RightButton/Label");
 
 		RandButton ();
 
@@ -101,36 +102,35 @@ public class MPStar : MonoBehaviour {
 	}
 
 	void RandButton(){
-		int rand = Random.Range (1, 5);
+		rand = Random.Range (1, 5);
 		
 		switch(rand){
 		case 1:
-			upButton.GetComponent<UIButton>().isEnabled = true;
-			downButton.GetComponent<UIButton>().isEnabled = false;
-			leftButton.GetComponent<UIButton>().isEnabled = false;
-			rightButton.GetComponent<UIButton>().isEnabled = false;
-			
+			upButton.SetActive(true);
+			downButton.SetActive(false);
+			leftButton.SetActive(false);
+			rightButton.SetActive(false);
 			break;
 		case 2:
-			downButton.GetComponent<UIButton>().isEnabled = true;
-			upButton.GetComponent<UIButton>().isEnabled = false;
-			leftButton.GetComponent<UIButton>().isEnabled = false;
-			rightButton.GetComponent<UIButton>().isEnabled = false;
-			
+			upButton.SetActive(false);
+			downButton.SetActive(true);
+			leftButton.SetActive(false);
+			rightButton.SetActive(false);
+
 			break;
 		case 3:
-			leftButton.GetComponent<UIButton>().isEnabled = true;
-			downButton.GetComponent<UIButton>().isEnabled = false;
-			upButton.GetComponent<UIButton>().isEnabled = false;
-			rightButton.GetComponent<UIButton>().isEnabled = false;
-			
+			upButton.SetActive(false);
+			downButton.SetActive(false);
+			leftButton.SetActive(true);
+			rightButton.SetActive(false);
+
 			break;
 		case 4:
-			rightButton.GetComponent<UIButton>().isEnabled = true;
-			downButton.GetComponent<UIButton>().isEnabled = false;
-			leftButton.GetComponent<UIButton>().isEnabled = false;
-			upButton.GetComponent<UIButton>().isEnabled = false;
-			
+			upButton.SetActive(false);
+			downButton.SetActive(false);
+			leftButton.SetActive(false);
+			rightButton.SetActive(true);
+
 			break;
 		default:
 			break;
@@ -141,27 +141,39 @@ public class MPStar : MonoBehaviour {
 
 	void UpButtonPressed() {
 		print ("UpButton Pressed!");
-		mp++;
+		if (rand == 1) {
+			mp++;
+		}else FindObjectOfType<Player> ().charge = false;
+
 		RandButton ();
 	}
 	
 	void DownButtonPressed() {
 		print ("DownButton Pressed!");
-		mp++;
+		if (rand == 2) {
+			mp++;
+		}else FindObjectOfType<Player> ().charge = false;
+
 		RandButton ();
 	}
 	
 	/// <summary>右ボタン押された</summary>
 	void RightButtonPressed() {
 		print ("RightButton Pressed!");
-		mp++;
+		if (rand == 4) {
+			mp++;
+		}else FindObjectOfType<Player> ().charge = false;
+		
 		RandButton ();
 	}
 	
 	/// <summary>左ボタン押された</summary>
 	void LeftButtonPressed() {
 		print ("LeftButton Pressed!");
-		mp++;
+		if (rand == 3) {
+			mp++;
+		}else FindObjectOfType<Player> ().charge = false;
+		
 		RandButton ();
 	} 
 

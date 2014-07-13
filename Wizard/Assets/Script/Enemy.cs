@@ -22,7 +22,11 @@ public class Enemy : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D c){
 		audio.Play ();
 		director = transform.position;
-		animator.SetTrigger ("Dead");
+
+		string layerName = LayerMask.LayerToName (c.gameObject.layer);
+		if (layerName != "Player") {
+			animator.SetTrigger ("Dead");
+		}
 
 	}
 
