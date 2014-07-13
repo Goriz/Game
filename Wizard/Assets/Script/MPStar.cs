@@ -5,6 +5,9 @@ public class MPStar : MonoBehaviour {
 
 	public int mpspeed = 2;
 
+	private AudioSource success;
+	private AudioSource badSound;
+
 	private int mp = 15;
 	private int rand = 1;
 	private GameObject mpstar1;
@@ -26,7 +29,9 @@ public class MPStar : MonoBehaviour {
 
 
 	void Start(){
-	
+		AudioSource[] audioSources = GetComponents<AudioSource>();
+		success = audioSources[0];
+		badSound = audioSources[1];
 
 		mpstar1 = GameObject.Find("MPStar1");
 		mpstar2 = GameObject.Find("MPStar2");
@@ -142,8 +147,12 @@ public class MPStar : MonoBehaviour {
 	void UpButtonPressed() {
 		print ("UpButton Pressed!");
 		if (rand == 1) {
+			success.PlayOneShot(success.clip);
 			mp++;
-		}else FindObjectOfType<Player> ().charge = false;
+		} else { 
+			mp = mp - mpspeed;
+			badSound.PlayOneShot(badSound.clip);
+		}
 
 		RandButton ();
 	}
@@ -151,28 +160,38 @@ public class MPStar : MonoBehaviour {
 	void DownButtonPressed() {
 		print ("DownButton Pressed!");
 		if (rand == 2) {
+			success.PlayOneShot(success.clip);
 			mp++;
-		}else FindObjectOfType<Player> ().charge = false;
+		} else {
+			mp = mp - mpspeed;
+			badSound.PlayOneShot(badSound.clip);
+		}
 
 		RandButton ();
 	}
 	
 	/// <summary>右ボタン押された</summary>
 	void RightButtonPressed() {
-		print ("RightButton Pressed!");
 		if (rand == 4) {
+			success.PlayOneShot(success.clip);
 			mp++;
-		}else FindObjectOfType<Player> ().charge = false;
+		} else { 
+			mp = mp - mpspeed;
+			badSound.PlayOneShot(badSound.clip);
+		}
 		
 		RandButton ();
 	}
 	
 	/// <summary>左ボタン押された</summary>
 	void LeftButtonPressed() {
-		print ("LeftButton Pressed!");
 		if (rand == 3) {
+			success.PlayOneShot(success.clip);
 			mp++;
-		}else FindObjectOfType<Player> ().charge = false;
+		} else { 
+			mp = mp - mpspeed;
+			badSound.PlayOneShot(badSound.clip);
+		}
 		
 		RandButton ();
 	} 
