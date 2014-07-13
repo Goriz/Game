@@ -27,8 +27,8 @@ public class Enemy : MonoBehaviour {
 	}
 
 	void Dead(){
+		FindObjectOfType<Score>().AddPoint(1);
 		Destroy (gameObject);
-
 
 	}
 }

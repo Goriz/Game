@@ -4,13 +4,18 @@ using System.Collections;
 public class EnemyCreator : MonoBehaviour {
 
 	public GameObject enemy;
-	public float seconds = 1f;
+	public float seconds = 5f;
+	private int count = 0;
+
+	public const float INTERVAL = 10.0f;
+	public float timer = INTERVAL;
 	
 	// Startメソッドをコルーチンとして呼び出す
 	IEnumerator Start ()
 	{
+
 		while (true) {
-			
+
 			int rand = Random.Range(1, 4);
 			
 			switch(rand){
@@ -29,9 +34,24 @@ public class EnemyCreator : MonoBehaviour {
 			default:
 				break;
 			}
+
+			count++;
+
 			// seconds秒待つ
 			yield return new WaitForSeconds (seconds);
 			
+		}
+	}
+
+	private void Update()
+	{
+		timer -= Time.deltaTime;
+		if (timer <= 0)
+		{
+			if(seconds > 1.0f){
+			seconds = seconds - 0.5f;
+			}
+			timer = INTERVAL;
 		}
 	}
 }

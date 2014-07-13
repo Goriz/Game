@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MPStar : MonoBehaviour {
 
-	public int mpspeed = 3;
+	public int mpspeed = 2;
 
 	private int mp = 15;
 	private GameObject mpstar1;
@@ -25,9 +25,7 @@ public class MPStar : MonoBehaviour {
 
 
 	void Start(){
-	/*	for(int i = 1 ; i <= 10 ; i++){
-		mpstars[i-1] = GameObject.Find("MPStar" + i.ToString());
-		}	*/
+	
 
 		mpstar1 = GameObject.Find("MPStar1");
 		mpstar2 = GameObject.Find("MPStar2");
