@@ -15,7 +15,7 @@ public class Menu : MonoBehaviour {
 	}
 
 	void GameStart(){
-		Application.LoadLevel ("Battle");
+		FadeManager.Instance.LoadLevel("Battle",1.0f);
 	}
 
 }

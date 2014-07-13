@@ -55,7 +55,12 @@ public class MPStar : MonoBehaviour {
 
 
 	void Update(){
-	
+
+		if (mp > 30) {
+			mp = 30;
+		}
+
+	/* **************************** MPStar Controll ***************************** */
 		if (mp >= mpspeed * 10) {
 			mpstar10.SetActive (true);
 		} else mpstar10.SetActive (false);
@@ -97,6 +102,7 @@ public class MPStar : MonoBehaviour {
 		} else
 			mpstar1.SetActive (false);
 
+		/* **************************************************************** */
 
 	}
 
@@ -145,7 +151,6 @@ public class MPStar : MonoBehaviour {
 	}
 
 	void UpButtonPressed() {
-		print ("UpButton Pressed!");
 		if (rand == 1) {
 			success.PlayOneShot(success.clip);
 			mp++;
@@ -158,7 +163,6 @@ public class MPStar : MonoBehaviour {
 	}
 	
 	void DownButtonPressed() {
-		print ("DownButton Pressed!");
 		if (rand == 2) {
 			success.PlayOneShot(success.clip);
 			mp++;
