@@ -51,13 +51,13 @@ public class MakeEggMan : MonoBehaviour {
 			if(place_direction >=  0.5){
 				place_vector = place_vector * -1;
 			}
-			Vector2 appearPoint = new Vector2(place_vector,6);
+			Vector2 appearPoint = new Vector2(place_vector,7);
 
 			// 弾をプレイヤーと同じ位置/角度で作成
 			Instantiate (test, appearPoint, transform.rotation);
 			//Instantiate (test, appearPoint, transform.rotation);
 			// 0.05秒待つ
-			yield return new WaitForSeconds (0.5f);
+			yield return new WaitForSeconds (0.2f);
 			//Debug.Log(i);
 		}
 	}

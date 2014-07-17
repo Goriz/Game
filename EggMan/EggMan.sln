@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{2C500D19-DBE9-9D78-FA51-59AF26D17329}") = "EggMan", "Assembly-CSharp.csproj", "{EBB34DA2-3CE2-80B4-F800-C8C3D50DB0AF}"
 EndProject
+Project("{2C500D19-DBE9-9D78-FA51-59AF26D17329}") = "EggMan", "Assembly-CSharp-Editor.csproj", "{40C884F5-59B4-3FF5-4A29-5159D5F73474}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +15,15 @@ Global
 		{EBB34DA2-3CE2-80B4-F800-C8C3D50DB0AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBB34DA2-3CE2-80B4-F800-C8C3D50DB0AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBB34DA2-3CE2-80B4-F800-C8C3D50DB0AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40C884F5-59B4-3FF5-4A29-5159D5F73474}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40C884F5-59B4-3FF5-4A29-5159D5F73474}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40C884F5-59B4-3FF5-4A29-5159D5F73474}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40C884F5-59B4-3FF5-4A29-5159D5F73474}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																								GlobalSection(MonoDevelopProperties) = preSolution
+																														GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
