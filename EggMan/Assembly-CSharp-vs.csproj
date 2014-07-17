@@ -51,7 +51,7 @@
      <Compile Include="Assets\Scripts\EggMan.cs" />
      <Compile Include="Assets\Scripts\Ground.cs" />
      <Compile Include="Assets\Scripts\MakeEggMan.cs" />
-     <Compile Include="Assets\Scripts\Pointer.cs" />
+     <Compile Include="Assets\Scripts\Score.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

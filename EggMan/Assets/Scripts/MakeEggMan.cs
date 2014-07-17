@@ -58,7 +58,7 @@ public class MakeEggMan : MonoBehaviour {
 			//Instantiate (test, appearPoint, transform.rotation);
 			// 0.05秒待つ
 			yield return new WaitForSeconds (0.5f);
-			Debug.Log(i);
+			//Debug.Log(i);
 		}
 	}
 	// Update is called once per frame

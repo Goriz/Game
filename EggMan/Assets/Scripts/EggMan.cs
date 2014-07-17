@@ -6,7 +6,8 @@ public class EggMan : MonoBehaviour {
 
 	public GameObject eggman;
 	public GameObject Break;
-	public int Point;
+	public int point;
+
 
 	//private int i=1;
 
@@ -34,6 +35,7 @@ public class EggMan : MonoBehaviour {
 				//Debug.Log(eggman.transform.localPosition);
 				if( v.x >= egg.x-0.8 && v.x <=egg.x+0.8 && v.y >= egg.y-0.8 && v.y <= egg.y+0.8){
 					Destroy (eggman);
+					FindObjectOfType<Score>().AddPoint(point);
 					Instantiate (Break, eggman.transform.position, eggman.transform.rotation);
 				}
 			}
